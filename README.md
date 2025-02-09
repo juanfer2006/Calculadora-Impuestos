@@ -1,7 +1,8 @@
 # Calculadora-Impuestos
 
-Escenarios Específicos
-1.	Factura estándar nacional con IVA, Impuesto Nacional al Consumo y retenciones nacionales:
+# Escenarios Específicos
+# 1.	Factura estándar nacional con IVA, Impuesto Nacional al Consumo y retenciones nacionales:
+
 o	Monto positivo.
 o	IVA del 19%.
 o	Impuesto Nacional al Consumo del 8%.
