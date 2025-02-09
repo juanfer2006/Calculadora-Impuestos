@@ -4,6 +4,7 @@
 # 1.	Factura estándar nacional con IVA, Impuesto Nacional al Consumo y retenciones nacionales:
 
 o	Monto positivo.
+
 o	IVA del 19%.
 o	Impuesto Nacional al Consumo del 8%.
 o	Retención del 3.5% que se resta del total.
