@@ -123,3 +123,7 @@ Aspectos Generales para la Calculadora de Impuestos:
 - ¿Cómo se debería estructurar el cálculo cuando una venta incluye varios productos con diferentes tipos de impuestos?
 
 Respuesta del contador:  https://drive.google.com/file/d/1SBAEargqkdK94AKNtlrEPKnl8a22MXPh/view?usp=sharing
+
+
+# Archivo Excel
+https://1drv.ms/x/s!AqPSu27mK3cQpvgaka5NFwccxsHz1w?e=Otbraq
