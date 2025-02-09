@@ -48,7 +48,8 @@
 -	Validación del cálculo por separado y suma total.
 
 # Casos de Prueba
-Casos Normales:
+# Casos Normales:
+
 1.	Factura nacional estándar:
 o	Valor base: $1,000,000.
 o	IVA: $190,000.
