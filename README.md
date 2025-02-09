@@ -107,18 +107,18 @@
 # Evidencias
 Se le realizaron las siguientes preguntas a un contador:
 
-# Exento o Excluido:
+Exento o Excluido:
 - ¿Cuál es la diferencia entre un producto exento y uno excluido de impuestos?
 
-# IVA (Impuesto al Valor Agregado):
+IVA (Impuesto al Valor Agregado):
 - ¿En qué casos se aplica el IVA del 5% y en cuáles el del 19%?
 - ¿Cómo se calcula el IVA en una factura de venta?
   
-# Impuesto Nacional al Consumo (INC):
+Impuesto Nacional al Consumo (INC):
 - ¿Qué productos o servicios están sujetos al INC?
 - ¿Cómo se diferencia el INC del IVA en términos de cálculo y aplicación?
   
-# Aspectos Generales para la Calculadora de Impuestos:
+Aspectos Generales para la Calculadora de Impuestos:
 - ¿Qué variables de entrada y salida considerarías esenciales para una calculadora de impuestos en ventas?
 - ¿Cómo se debería estructurar el cálculo cuando una venta incluye varios productos con diferentes tipos de impuestos?
 
