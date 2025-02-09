@@ -5,9 +5,12 @@
 
 -	Monto positivo.
 
-o	IVA del 19%.
-o	Impuesto Nacional al Consumo del 8%.
-o	Retención del 3.5% que se resta del total.
+-	IVA del 19%.
+
+-	Impuesto Nacional al Consumo del 8%.
+  
+-	Retención del 3.5% que se resta del total.
+  
 2.	Factura internacional con retención externa:
 o	Venta al extranjero.
 o	IVA exento.
