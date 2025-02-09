@@ -1,6 +1,7 @@
 # Calculadora-Impuestos
 
 # Escenarios Específicos
+
 # 1.	Factura estándar nacional con IVA, Impuesto Nacional al Consumo y retenciones nacionales:
 
 -	Monto positivo.
@@ -11,25 +12,42 @@
   
 -	Retención del 3.5% que se resta del total.
   
-2.	Factura internacional con retención externa:
-o	Venta al extranjero.
-o	IVA exento.
-o	Retención del 2% que se suma al total.
-3.	Nota crédito por devolución total:
-o	Monto negativo equivalente al valor de una factura original.
-o	IVA y retenciones aplicadas de forma inversa.
-4.	Nota crédito por devolución parcial:
-o	Monto negativo parcial.
-o	Cálculo proporcional del IVA y retenciones.
-5.	Factura sin impuestos:
-o	Producto exento de IVA e Impuesto Nacional al Consumo.
-o	Sin retenciones.
-6.	Factura con error en el valor base:
-o	Base imponible incorrecta para verificar validación de errores.
-7.	Factura con múltiples productos con diferentes tasas de IVA:
-o	Productos al 0%, 5% y 19%.
-o	Validación del cálculo por separado y suma total.
-Casos de Prueba
+# 2.	Factura internacional con retención externa:
+
+-	Venta al extranjero.
+  
+-	IVA exento.
+  
+-	Retención del 2% que se suma al total.
+  
+# 3.	Nota crédito por devolución total:
+
+-	Monto negativo equivalente al valor de una factura original.
+
+-	IVA y retenciones aplicadas de forma inversa.
+
+# 4.	Nota crédito por devolución parcial:
+
+-	Monto negativo parcial.
+
+-	Cálculo proporcional del IVA y retenciones.
+
+# 5.	Factura sin impuestos:
+   
+-	Producto exento de IVA e Impuesto Nacional al Consumo.
+
+-	Sin retenciones.
+
+# 6.	Factura con error en el valor base:
+
+-	Base imponible incorrecta para verificar validación de errores.
+  
+# 7.	Factura con múltiples productos con diferentes tasas de IVA:
+
+-	Productos al 0%, 5% y 19%.
+-	Validación del cálculo por separado y suma total.
+
+# Casos de Prueba
 Casos Normales:
 1.	Factura nacional estándar:
 o	Valor base: $1,000,000.
