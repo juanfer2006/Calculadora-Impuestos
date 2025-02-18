@@ -1,25 +1,27 @@
 import unittest
-from calculadora import Impuestos
+from calculator import Taxes
 
 class calctest(unittest.TestCase):
     def test_normal_1(self):
-        compra = 1000000
-        porcentaje = 19
+        purchase = 1000000
+        porcentage = 19
 
-        resultado_esperado = 190000
-        resultado = Impuestos.calcular(compra, porcentaje)
+        expected_result = 190000
+        result = Taxes.calculate(purchase, porcentage)
 
-        self.assertEqual(round(resultado_esperado), round(resultado))
+        self.assertEqual(round(expected_result), round(result))
     
     def test_normal_2(self):
-        compra = 200000
-        porcentaje = 19
+        purchase = 200000
+        porcentage = 19
 
-        resultado_esperado = 38000
-        resultado = Impuestos.calcular(compra, porcentaje)
+        expected_result = 38000
+        result = Taxes.calculate(purchase, porcentage)
 
-        self.assertEqual(round(resultado_esperado), round(resultado))
-     
+        self.assertEqual(round(expected_result), round(result))
+
+    def test_normal_3(self):
+        pass
 
         
 if __name__ == '__main__':
