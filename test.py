@@ -39,15 +39,23 @@ class calctest(unittest.TestCase):
 
         self.assertEqual(round(expected_result), round(result))
 
-    def test_extraordinary_1(self):
-        pass
+    def test_extraordinary_2(self):
+        purchase = 1200
+        porcentage = 19
+        currency = 'USD'
+
+        expected_result = 1026000
+        result = Taxes.calculate(purchase, porcentage, currency=currency)
+
+        self.assertEqual(round(expected_result), round(result))
 
     def test_extraordinary_3(self):
         purchase = 150000
         porcentage = 19
+        plastic_bag = 3
 
-        expected_result = 178695
-        result = Taxes.calculate(purchase, porcentage)
+        expected_result = 28695
+        result = Taxes.calculate(purchase, porcentage, plastic_bag=plastic_bag)
 
         self.assertEqual(round(expected_result), round(result))
 
