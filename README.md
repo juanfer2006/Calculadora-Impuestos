@@ -28,11 +28,13 @@
 
 - Salida Esperada: IVA a pagar: $0
 
-# 5. Cálculo del IVA con Diferentes Tasas en una Misma Factura
+# 5. Cálculo del IVA con Valor en Moneda Extranjera
 
-- Entradas: Valor de la compra: $1,200,000, IVA 19% en un producto ($700,000) y 5% en otro ($500,000)
+- Entradas: Valor de la compra: 1,200 USD, Tipo de cambio: 4,500 COP/USD, Porcentaje de IVA: 19%
 
-- Salida Esperada: IVA a pagar: $158,000
+- Salida Esperada: IVA a pagar: $1,026,000 COP
+
+- Descripción: El cálculo debe tomar en cuenta el tipo de cambio para convertir el valor de la compra a la moneda local antes de aplicar el IVA.
 
 # 6. Cálculo del IVA con Impuesto a las Bolsas Plásticas
 
