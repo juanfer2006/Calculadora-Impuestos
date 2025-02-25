@@ -58,6 +58,28 @@ class calctest(unittest.TestCase):
         result = Taxes.calculate(purchase, porcentage, plastic_bag=plastic_bag)
 
         self.assertEqual(round(expected_result), round(result))
+        
+    def test_error_1(self):
+        purchase = -1000000
+        porcentage = 19
+        
+        with self.assertRaises(Taxes.ErrorValueNegative):
+            result = Taxes.ErrorValueNegative(purchase, porcentage)
+            
+    def test_error_2(self):
+        purchase = 1000000
+        porcentage = 150
+        
+        with self.assertRaises(Taxes.ErrorValueNegative):
+            result = Taxes.ErrorValueNegative(purchase, porcentage)
+            
+    def test_error_3(self):
+        purchase = 'Un millón de pesos'
+        porcentage = 19
+        
+        with self.assertRaises(Taxes.ErrorValueNegative):
+            result = Taxes.ErrorValueNegative(purchase, porcentage)
+
 
     
 
