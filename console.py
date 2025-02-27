@@ -1,8 +1,8 @@
 from calculator import Taxes
 
-purchase = input("Ingrese el valor la compra: ")
+purchase = float(input("Ingrese el valor la compra: "))
 porcentage = float(input('Ingrese el porcentaje de IVA: '))
-Discount = float(input("Ingrese el descuento:"))
+Discount = float(input("Ingrese el descuento: "))
 plastic_bag = float(input("Ingrese la cantidad de bolsas plasticas: "))
 currency = str(input("Ingrese una moneda valida: USD o COP: "))
 
