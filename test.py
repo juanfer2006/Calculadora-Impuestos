@@ -1,5 +1,5 @@
 import unittest
-from calculator import Taxes
+from calculator import Taxes, ErrorValueNegative, ErrorIncorrectIVA, ErrorStringIva, ErrorPorcentage
 
 class calctest(unittest.TestCase):
     def test_normal_1(self):
@@ -63,22 +63,29 @@ class calctest(unittest.TestCase):
         purchase = -1000000
         porcentage = 19
         
-        with self.assertRaises(Taxes.ErrorValueNegative):
-            result = Taxes.ErrorValueNegative(purchase, porcentage)
+        with self.assertRaises(ErrorValueNegative):
+            Taxes.calculate(purchase, porcentage)
             
     def test_error_2(self):
         purchase = 1000000
         porcentage = 150
         
-        with self.assertRaises(Taxes.ErrorValueNegative):
-            result = Taxes.ErrorValueNegative(purchase, porcentage)
+        with self.assertRaises(ErrorIncorrectIVA):
+            Taxes.calculate(purchase, porcentage)
             
     def test_error_3(self):
         purchase = 'Un millón de pesos'
         porcentage = 19
         
-        with self.assertRaises(Taxes.ErrorValueNegative):
-            result = Taxes.ErrorValueNegative(purchase, porcentage)
+        with self.assertRaises(ErrorStringIva):
+            Taxes.calculate(purchase, porcentage)
+
+    def test_error_4(self):
+        purchase = 1000000
+        porcentage = 'Diecinueve%'
+        
+        with self.assertRaises(ErrorPorcentage):
+            Taxes.calculate(purchase, porcentage)
 
 
     
