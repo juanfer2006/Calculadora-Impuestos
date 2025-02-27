@@ -8,8 +8,7 @@ class ErrorIncorrectIVA(Exception):
  
 
 class ErrorStringIva(Exception):
-    def __init__(self, purchase):
-        super().__init__(f'No se pude calcular el impuesto.')
+    ...
 
 class ErrorPorcentage(Exception):
     ...
