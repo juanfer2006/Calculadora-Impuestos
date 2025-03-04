@@ -67,11 +67,11 @@ Juan Fernando Castañeda Agudelo
 
 - Salida Esperada: Error: "Formato de número inválido para el valor de la compra"
 
-# 10. Falta el Porcentaje de IVA
+# 10. IVA en formato incorrecto
 
-- Entradas: Valor de la compra: $500,000, Porcentaje de IVA: (vacío)
+- Entradas: Valor de la compra: $1,000,000, Porcentaje de IVA: Diecinueve%
 
-- Salida Esperada: Error: "Falta el porcentaje de IVA"
+- Salida Esperada: Error: "Formato de número de IVA inválido"
 
 # Archivo Excel:
 https://1drv.ms/x/s!AqPSu27mK3cQpvgaka5NFwccxsHz1w?e=ahm3ae
