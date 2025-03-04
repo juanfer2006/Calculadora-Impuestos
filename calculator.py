@@ -15,6 +15,9 @@ class ErrorPorcentage(Exception):
 
 class Taxes():
     def calculate(purchase, porcentage, discount=0, plastic_bag=0, currency='COP'):
+        dollar_value = 4500
+        plastic_bag_tax = 65
+        
         if type(purchase) == str:
             raise ErrorStringIva()
 
@@ -28,10 +31,10 @@ class Taxes():
             raise ErrorIncorrectIVA(porcentage)
 
         if currency == 'USD':
-            purchase = purchase * 4500
+            purchase = purchase * dollar_value
 
         calculate_final = (purchase - ((discount/100)*purchase)) * (porcentage/100)
-        calculate_final2 = calculate_final + (plastic_bag*65)
+        calculate_final2 = calculate_final + (plastic_bag * plastic_bag_tax)
 
         return calculate_final2
     
