@@ -1,4 +1,6 @@
-from calculator import Taxes
+import sys
+sys.path.append('src')
+from model.calculator import *
 
 try:
     purchase = float(input("Ingrese el valor la compra: "))

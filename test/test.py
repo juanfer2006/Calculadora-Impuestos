@@ -1,5 +1,7 @@
 import unittest
-from calculator import Taxes, ErrorValueNegative, ErrorIncorrectIVA, ErrorStringIva, ErrorPorcentage
+import sys
+sys.path.append('src')
+from model.calculator import *
 
 class calctest(unittest.TestCase):
     def test_normal_1(self):
