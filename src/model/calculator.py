@@ -1,11 +1,14 @@
 class ErrorValueNegative(Exception):
     def __init__(self, purchase):
-        super().__init__(f'No se pude calcular el impuesto. El valor {purchase} es negativo. Ingrese un valor positivo')
+        super().__init__(f'No se pude calcular el impuesto. El valor {purchase} no es valido. Ingrese un valor mayor a 0')
 
 class ErrorIncorrectIVA(Exception):
     def __init__(self, porcentage):
         super().__init__(f'No se pude calcular el impuesto. El porcentaje de IVA {porcentage} no es valido. Ingrese uno de los siguientes valorea: 0, 5, 19')
  
+class ErrorDiscount(Exception):
+    def __init__(self, discount):
+        super().__init__(f'No se pude calcular el impuesto. El valor {discount} no es valido. Ingrese un valor menor a 100')
 
 class ErrorStringIva(Exception):
     ...
@@ -24,11 +27,14 @@ class Taxes():
         if type(porcentage) == str:
             raise ErrorPorcentage()
 
-        if purchase < 0:
+        if purchase <= 0:
             raise ErrorValueNegative(purchase)
 
         if porcentage != 19 and porcentage != 5 and porcentage != 0:
             raise ErrorIncorrectIVA(porcentage)
+        
+        if discount > 100:
+           raise ErrorDiscount(discount)
 
         if currency == 'USD':
             purchase = purchase * dollar_value
