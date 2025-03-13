@@ -10,11 +10,10 @@ Este proyecto es una aplicación diseñada para calcular el impuesto de una comp
 # ¿Cómo lo hago funcionar?
 
 - Prerrequisitos: Antes de ejecutar este proyecto, debes asegurarte de tener instalado Python en tu máquina. Este proyecto no depende de bibliotecas externas, por lo que no se necesitan instalaciones adicionales fuera del entorno estándar de Python.
-- Ejecucion:
-- Pasos para Ejecutar el Programa:
-1. Descargar o Clonar el Proyecto: Si no tienes el proyecto, clónalo o descárgalo y descomprímelo en tu máquina local.
-2. Navegar a la Carpeta del Proyecto: Abre una terminal o línea de comandos y navega hasta la carpeta raíz del proyecto: "cd ruta/del/proyecto"
-3. Ejecutar el Programa: Para ejecutar el cálculo de impuestos, usa el siguiente comando: "py src/taxes.py"
+- Ejecucion: Pasos para Ejecutar el Programa:
+  1. Descargar o Clonar el Proyecto: Si no tienes el proyecto, clónalo o descárgalo y descomprímelo en tu máquina local.
+  2. Navegar a la Carpeta del Proyecto: Abre una terminal o línea de comandos y navega hasta la carpeta raíz del proyecto: "cd ruta/del/proyecto"
+  3. Ejecutar el Programa: Para ejecutar el cálculo de impuestos, usa el siguiente comando: "py src/taxes.py"
 
 # ¿Cómo está hecho?
 
