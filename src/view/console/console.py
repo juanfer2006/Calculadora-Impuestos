@@ -11,7 +11,9 @@ try:
 
     calculation = Taxes.calculate(purchase, porcentage, discount, plastic_bag, currency)
     print(f"El valor de la cuota es: {calculation}")
+
 except ValueError as err:
     print('Formato incorrecto')
+    
 except Exception as err:
     print(f"Ocurrio un error: { err }")

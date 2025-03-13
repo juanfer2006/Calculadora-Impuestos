@@ -88,10 +88,6 @@ class calctest(unittest.TestCase):
         
         with self.assertRaises(ErrorPorcentage):
             Taxes.calculate(purchase, porcentage)
-
-
-    
-
         
 if __name__ == '__main__':
     unittest.main()
