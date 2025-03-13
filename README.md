@@ -9,9 +9,7 @@ Este proyecto es una aplicación diseñada para calcular el impuesto de una comp
 
 # ¿Cómo lo hago funcionar?
 
-- Prerrequisitos:
-  
-Antes de ejecutar este proyecto, debes asegurarte de tener instalado Python en tu máquina. Este proyecto no depende de bibliotecas externas, por lo que no se necesitan instalaciones adicionales fuera del entorno estándar de Python.
+- Prerrequisitos: Antes de ejecutar este proyecto, debes asegurarte de tener instalado Python en tu máquina. Este proyecto no depende de bibliotecas externas, por lo que no se necesitan instalaciones adicionales fuera del entorno estándar de Python.
 
 # ¿Cómo está hecho?
 
