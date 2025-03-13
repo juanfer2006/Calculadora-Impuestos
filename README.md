@@ -17,8 +17,10 @@ Este proyecto es una aplicación diseñada para calcular el impuesto de una comp
 
 # ¿Cómo está hecho?
 
-- Carpeta src: Codigo fuente de la logica de la aplicación. Tiene subcarpetas por cada capa de la aplicacion
-- Carpeta tests: Pruebas Unitarias
+Arquitectura del Proyecto
+- Model: Maneja la lógica del negocio y los datos del programa.
+- View: Se encarga de la presentación y la interacción con el usuario.
+- Controller: Gestiona la comunicación entre la vista y el modelo.
 
 
 
