@@ -3,6 +3,24 @@ Heiver David Ruales Luna
 
 Juan Fernando Castañeda Agudelo
 
+# ¿Qué es y para qué es?
+
+Este proyecto es una aplicación diseñada para calcular el impuesto de una compra, considerando diferentes factores como el valor de la compra, el porcentaje de IVA, descuentos, y el costo adicional de las bolsas plásticas. El propósito principal de este proyecto es realizar estos cálculos de manera eficiente, asegurando que los datos proporcionados sean correctos a través de excepciones personalizadas, las cuales validan los parámetros antes de proceder con el cálculo.
+
+# ¿Cómo lo hago funcionar?
+
+- Prerrequisitos:
+  
+Antes de ejecutar este proyecto, debes asegurarte de tener instalado Python en tu máquina. Este proyecto no depende de bibliotecas externas, por lo que no se necesitan instalaciones adicionales fuera del entorno estándar de Python.
+
+# ¿Cómo está hecho?
+
+- Carpeta src: Codigo fuente de la logica de la aplicación. Tiene subcarpetas por cada capa de la aplicacion
+- Carpeta tests: Pruebas Unitarias
+
+
+
+
 # Escenarios Específicos para Cálculo de Impuestos
 
 # Casos Normales
