@@ -8,7 +8,7 @@ class ErrorIncorrectIVA(Exception):
  
 class ErrorDiscount(Exception):
     def __init__(self, discount):
-        super().__init__(f'No se pude calcular el impuesto. El valor {discount} no es valido. Ingrese un valor menor a 100')
+        super().__init__(f'No se pude calcular el impuesto. El valor de descuento {discount} no es valido. Ingrese un valor menor a 100')
 
 class ErrorStringIva(Exception):
     ...
