@@ -21,6 +21,7 @@ Arquitectura del Proyecto
 - Model: Maneja la lógica del negocio y los datos del programa.
 - View: Se encarga de la presentación y la interacción con el usuario.
 - Controller: Gestiona la comunicación entre la vista y el modelo.
+- Carpeta tests: Pruebas Unitarias
 
 
 
