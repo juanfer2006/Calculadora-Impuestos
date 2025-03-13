@@ -23,6 +23,9 @@ Arquitectura del Proyecto
 - Controller: Gestiona la comunicación entre la vista y el modelo.
 - Carpeta tests: Pruebas Unitarias
 
+# Uso
+Para ejecutar las pruebas unitarias, desde la carpeta raiz, use el comando "py test\test.py" Para poder ejecutarlas desde la carpeta raiz, debe indicar la ruta de busqueda donde se encuentran los módulos, incluyendo las siguientes lineas al inicio del módulo de pruebas
+
 
 
 
