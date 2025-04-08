@@ -8,10 +8,10 @@ from kivy.uix.popup import Popup
 import sys
 sys.path.append("src")
 
-# Asegúrate de que Taxes y calc_payment estén correctamente definidos en model/calculator.py
+
 from model.calculator import Taxes
 
-class PaymentApp(App):
+class TaxesApp(App):
     def build(self):
         contenedor = GridLayout(cols=2, row_force_default=True, row_default_height=100)
 
@@ -21,19 +21,19 @@ class PaymentApp(App):
 
         contenedor.add_widget(Label(text="Ingresar porcentaje de IVA"))
         self.cuotas = TextInput(font_size=40)
-        contenedor.add_widget(self.cuotas)
+        contenedor.add_widget(self.porcentaje)
 
         contenedor.add_widget(Label(text="Ingresar descuento"))
         self.tasa = TextInput(font_size=40)
-        contenedor.add_widget(self.tasa)
+        contenedor.add_widget(self.descuento)
         
         contenedor.add_widget(Label(text="Ingresar cantidad de bolsas plasticas"))
         self.tasa = TextInput(font_size=40)
-        contenedor.add_widget(self.tasa)
+        contenedor.add_widget(self.cantidadBolsas)
         
         contenedor.add_widget(Label(text="Ingresar moneda: US o COP"))
         self.tasa = TextInput(font_size=30)
-        contenedor.add_widget(self.tasa)
+        contenedor.add_widget(self.tipoMoneda)
 
         self.resultado = Label()
         contenedor.add_widget(self.resultado)
@@ -42,15 +42,15 @@ class PaymentApp(App):
         contenedor.add_widget(calcular)
 
         # Conectar el callback con el evento press del botón
-        calcular.bind(on_press=self.calcular_cuota)
+        calcular.bind(on_press=self.calcular_impuesto)
 
         # Siempre se retorna el widget que contiene a todos los demás
         return contenedor
     
-    def calcular_cuota(self, instance):
+    def calcular_impuesto(self, instance):
         try:
             self.validar()
-            cuota = Taxes.calc_payment(amount=float(self.compra.text), number_of_payments=int(self.cuotas.text), interest=float(self.tasa.text))
+            cuota = Taxes.calculate(amount=float(self.compra.text), number_of_payments=int(self.cuotas.text), interest=float(self.tasa.text))
             self.resultado.text = str(round(cuota, 2))
 
         except ValueError as err:
@@ -92,5 +92,5 @@ class PaymentApp(App):
             raise Exception("La tasa de interés debe ser un número válido, sin signo de porcentaje")
 
 if __name__ == "__main__":
-    PaymentApp().run()
+    TaxesApp().run()
     
