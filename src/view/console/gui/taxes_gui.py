@@ -1,9 +1,11 @@
+import kivy
 from kivy.app import App
 from kivy.uix.label import Label
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.popup import Popup
+from kivy.uix.boxlayout import BoxLayout
 
 import sys
 sys.path.append("src")
@@ -11,86 +13,68 @@ sys.path.append("src")
 
 from model.calculator import Taxes
 
-class TaxesApp(App):
-    def build(self):
-        contenedor = GridLayout(cols=2, row_force_default=True, row_default_height=100)
+# Asegúrate de que el path esté bien si estás ejecutando desde otra carpeta
+from model.calculator import Taxes, ErrorValueNegative, ErrorIncorrectIVA, ErrorDiscount, ErrorPorcentage, ErrorStringIva
 
-        contenedor.add_widget(Label(text="Ingresar valor de la compra"))
-        self.compra = TextInput(font_size=40)
-        contenedor.add_widget(self.compra)
+class TaxCalculatorForm(BoxLayout):
+    def __init__(self, **kwargs):
+        super().__init__(orientation='vertical', **kwargs)
 
-        contenedor.add_widget(Label(text="Ingresar porcentaje de IVA"))
-        self.cuotas = TextInput(font_size=40)
-        contenedor.add_widget(self.porcentaje)
+        self.add_widget(Label(text='Valor de la compra:'))
+        self.purchase_input = TextInput(multiline=False, input_filter='float')
+        self.add_widget(self.purchase_input)
 
-        contenedor.add_widget(Label(text="Ingresar descuento"))
-        self.tasa = TextInput(font_size=40)
-        contenedor.add_widget(self.descuento)
-        
-        contenedor.add_widget(Label(text="Ingresar cantidad de bolsas plasticas"))
-        self.tasa = TextInput(font_size=40)
-        contenedor.add_widget(self.cantidadBolsas)
-        
-        contenedor.add_widget(Label(text="Ingresar moneda: US o COP"))
-        self.tasa = TextInput(font_size=30)
-        contenedor.add_widget(self.tipoMoneda)
+        self.add_widget(Label(text='Porcentaje de IVA:'))
+        self.iva_input = TextInput(multiline=False, input_filter='float')
+        self.add_widget(self.iva_input)
 
-        self.resultado = Label()
-        contenedor.add_widget(self.resultado)
+        self.add_widget(Label(text='Descuento (%):'))
+        self.discount_input = TextInput(multiline=False, input_filter='float')
+        self.add_widget(self.discount_input)
 
-        calcular = Button(text="Calcular", font_size=30)
-        contenedor.add_widget(calcular)
+        self.add_widget(Label(text='Cantidad de bolsas plásticas:'))
+        self.bags_input = TextInput(multiline=False, input_filter='int')
+        self.add_widget(self.bags_input)
 
-        # Conectar el callback con el evento press del botón
-        calcular.bind(on_press=self.calcular_impuesto)
+        self.add_widget(Label(text='Moneda (COP o USD):'))
+        self.currency_input = TextInput(multiline=False)
+        self.add_widget(self.currency_input)
 
-        # Siempre se retorna el widget que contiene a todos los demás
-        return contenedor
-    
-    def calcular_impuesto(self, instance):
-        try:
-            self.validar()
-            cuota = Taxes.calculate(amount=float(self.compra.text), number_of_payments=int(self.cuotas.text), interest=float(self.tasa.text))
-            self.resultado.text = str(round(cuota, 2))
+        self.result_label = Label(text='Resultado:')
+        self.add_widget(self.result_label)
 
-        except ValueError as err:
-            self.resultado.text = "El valor ingresado no es un número válido. Ingrese un número correcto, por ejemplo 500000.00"
-        except Exception as err:
-            self.mostrar_error(err)
-        
-    def mostrar_error(self, err):
-        """ 
-        Abre una ventana emergente, con un texto y un botón para cerrar 
-        Parámetros: 
-        err: Mensaje de error que queremos mostrar en la ventana        
-        """
-        contenido = GridLayout(cols=1)
-        contenido.add_widget(Label(text=str(err)))
-        cerrar = Button(text="Cerrar")
-        contenido.add_widget(cerrar)
-        popup = Popup(title="Error", content=contenido)
-        cerrar.bind(on_press=popup.dismiss)
+        self.calc_button = Button(text='Calcular IVA')
+        self.calc_button.bind(on_press=self.calculate_tax)
+        self.add_widget(self.calc_button)
+
+    def show_popup(self, title, message):
+        popup = Popup(title=title,
+                      content=Label(text=message),
+                      size_hint=(None, None), size=(400, 200))
         popup.open()
 
-    def validar(self):
-        """
-        Verifica que todos los datos ingresados por el usuario sean correctos
-        """
+    def calculate_tax(self, instance):
         try:
-            float(self.compra.text)  # Verifica que sea un número
-        except ValueError:
-            raise Exception("El Valor de la compra debe ser un número válido")
+            purchase = float(self.purchase_input.text)
+            porcentage = float(self.iva_input.text)
+            discount = float(self.discount_input.text) if self.discount_input.text else 0
+            plastic_bag = int(self.bags_input.text) if self.bags_input.text else 0
+            currency = self.currency_input.text.upper().strip()
 
-        try:
-            int(self.cuotas.text)  # Verifica que sea un número entero
-        except ValueError:
-            raise Exception("El Número de Cuotas debe ser un número válido")
+            result = Taxes.calculate(purchase, porcentage, discount, plastic_bag, currency)
+            self.result_label.text = f'Valor de la cuota: {result:.2f}'
 
-        try:
-            float(self.tasa.text)  # Verifica que sea un número
         except ValueError:
-            raise Exception("La tasa de interés debe ser un número válido, sin signo de porcentaje")
+            self.show_popup("Error", "Entrada inválida. Asegúrese de usar números válidos.")
+        except (ErrorValueNegative, ErrorIncorrectIVA, ErrorDiscount, ErrorPorcentage, ErrorStringIva) as e:
+            self.show_popup("Error de cálculo", str(e))
+        except Exception as e:
+            self.show_popup("Error inesperado", str(e))
 
-if __name__ == "__main__":
-    TaxesApp().run()
-    
+
+class TaxCalculatorApp(App):
+    def build(self):
+        return TaxCalculatorForm()
+
+if __name__ == '__main__':
+    TaxCalculatorApp().run()
