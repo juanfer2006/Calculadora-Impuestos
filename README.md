@@ -15,6 +15,14 @@ Este proyecto es una aplicación diseñada para calcular el impuesto de una comp
   2. Navegar a la Carpeta del Proyecto: Abre una terminal o línea de comandos y navega hasta la carpeta raíz del proyecto: "cd ruta\del\proyecto"
   3. Ejecutar el Programa: Para ejecutar el cálculo de impuestos, usa el siguiente comando en la carpeta del proyecto: "py src\view\console\console.py"
 
+# Ejecucion de interfaz grafica:
+  1. Descargar o Clonar el Proyecto: Si no tienes el proyecto, clónalo o descárgalo y descomprímelo en tu máquina local.
+  2. Navegar a la Carpeta del Proyecto: Abre una terminal o línea de comandos y navega hasta la carpeta raíz del proyecto: "cd ruta\del\proyecto"
+  3. Ejecutar desde la carpeta del proyecto el siguiente comando:
+     ```bash
+     python src\view\gui\taxes_gui.py
+     ```
+
 # ¿Cómo está hecho?
 
 Arquitectura del Proyecto
