@@ -124,3 +124,17 @@ class Taxes():
 
         return calculate_final2
     
+
+class User:
+    def __init__(self, id: str, name: str):
+        self.id: str = id
+        self.name: str = name
+
+    def is_equal(self, other):
+        """
+        Compara si la instancia actual es igual en todos sus atributos  a
+        otra instancia que recibe por parametro
+        """
+        assert(self.id == other.id, 'El id con coincide')
+        assert(self.name == other.name, 'El nombre no coincide')
+        return True

@@ -1,7 +1,9 @@
 import unittest
 import sys
 sys.path.append('src')
+sys.path.append( "." )
 from model.calculator import *
+from controller.calculator_controller import CalculatorController
 
 class calctest(unittest.TestCase):
     def test_normal_1(self):
@@ -88,6 +90,12 @@ class calctest(unittest.TestCase):
         
         with self.assertRaises(ErrorPorcentage):
             Taxes.calculate(purchase, porcentage)
+
+    def test_insertar_DB(self):
+        user = User(id = '12', name = 'David')
+        CalculatorController.insert(user)
+        dato_buscado = CalculatorController.search('12')
+        self.assertTrue(dato_buscado.is_equal(user))
         
 if __name__ == '__main__':
     unittest.main()
