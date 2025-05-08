@@ -98,8 +98,8 @@ class calctest(unittest.TestCase):
     def test_insert_DB_1(self):
         user = User(id = '12', name = 'David')
         CalculatorController.insert(user)
-        dato_buscado = CalculatorController.search('12')
-        self.assertTrue(dato_buscado.is_equal(user))
+        date_sought = CalculatorController.search('12')
+        self.assertTrue(date_sought.is_equal(user))
         
 if __name__ == '__main__':
     unittest.main()
