@@ -91,7 +91,11 @@ class calctest(unittest.TestCase):
         with self.assertRaises(ErrorPorcentage):
             Taxes.calculate(purchase, porcentage)
 
-    def test_insertar_DB(self):
+    def setUpClass():
+        CalculatorController.delete_table()
+        CalculatorController.create_table()
+
+    def test_insert_DB_1(self):
         user = User(id = '12', name = 'David')
         CalculatorController.insert(user)
         dato_buscado = CalculatorController.search('12')

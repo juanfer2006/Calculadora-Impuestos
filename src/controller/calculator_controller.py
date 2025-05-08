@@ -1,5 +1,6 @@
 import sys
 sys.path.append('src')
+sys.path.append( "." )
 from model.calculator import Taxes, User
 import psycopg2
 import SecretConfig
@@ -16,6 +17,20 @@ class CalculatorController:
         )
         cursor = connection.cursor()
         return cursor
+
+    def create_table():
+        cursor = CalculatorController.ObtenerCursor()
+        with open('sql/create_table.sql', 'r') as archive:
+            consultation = archive.read()
+        cursor.execute(consultation)
+        cursor.connection.commit() 
+
+    def delete_table():
+        cursor = CalculatorController.ObtenerCursor()
+        with open('sql/delete_table.sql', 'r') as archive:
+            consultation = archive.read()
+        cursor.execute(consultation)
+        cursor.connection.commit()
     
     def insert(user: User):
         cursor = CalculatorController.ObtenerCursor()
