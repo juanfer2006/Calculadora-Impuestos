@@ -1,7 +1,7 @@
 import sys
 sys.path.append('src')
 sys.path.append( "." )
-from model.calculator import Taxes, User
+from model.calculator import Taxes, User, TaxRecord
 import psycopg2
 import SecretConfig
 
@@ -39,6 +39,24 @@ class CalculatorController:
                     (id_user, name_user)
                     values ('{user.id}', '{user.name}');
                     """
+        cursor.execute(consultation)
+        cursor.connection.commit()
+
+    def insert_tax(tax: TaxRecord):
+        cursor = CalculatorController.GetCursor()
+        consultation = f"""
+            INSERT INTO taxes
+            (user_id, purchase, porcentage, discount, plastic_bags, currency, tax_value)
+            VALUES (
+                '{tax.user_id}',
+                {tax.purchase},
+                {tax.porcentage},
+                {tax.discount},
+                {tax.plastic_bags},
+                '{tax.currency}',
+                {tax.tax_value}
+            );
+        """
         cursor.execute(consultation)
         cursor.connection.commit()
 

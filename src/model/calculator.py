@@ -138,3 +138,24 @@ class User:
         assert(self.id == other.id, 'El id con coincide')
         assert(self.name == other.name, 'El nombre no coincide')
         return True
+    
+
+class TaxRecord:
+    def __init__(self, user_id: str, purchase: float, porcentage: int, discount: float, plastic_bags: int, currency: str, tax_value: float):
+        self.user_id = user_id
+        self.purchase = purchase
+        self.porcentage = porcentage
+        self.discount = discount
+        self.plastic_bags = plastic_bags
+        self.currency = currency
+        self.tax_value = tax_value
+
+    def is_equal(self, other):
+        assert self.user_id == other.user_id, "El id de usuario no coincide"
+        assert self.purchase == other.purchase, "El valor de compra no coincide"
+        assert self.porcentage == other.porcentage, "El porcentaje no coincide"
+        assert self.discount == other.discount, "El descuento no coincide"
+        assert self.plastic_bags == other.plastic_bags, "La cantidad de bolsas no coincide"
+        assert self.currency == other.currency, "La moneda no coincide"
+        assert self.tax_value == other.tax_value, "El impuesto calculado no coincide"
+        return True

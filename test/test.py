@@ -100,6 +100,28 @@ class calctest(unittest.TestCase):
         CalculatorController.insert(user)
         date_sought = CalculatorController.search('12')
         self.assertTrue(date_sought.is_equal(user))
+
+    def test_insert_tax_DB_1(self):
+        user_id = '12'
+        purchase = 1000000
+        porcentage = 19
+        discount = 0
+        plastic_bags = 0
+        currency = 'COP'
+        
+        tax_value = Taxes.calculate(purchase, porcentage, discount, plastic_bags, currency)
+        tax = TaxRecord(
+            user_id=user_id,
+            purchase=purchase,
+            porcentage=porcentage,
+            discount=discount,
+            plastic_bags=plastic_bags,
+            currency=currency,
+            tax_value=tax_value
+        )
+
+        # No lanza error si se inserta correctamente
+        CalculatorController.insert_tax(tax)
         
 if __name__ == '__main__':
     unittest.main()

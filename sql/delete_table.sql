@@ -1,1 +1,2 @@
-drop table if exists users;
+DROP TABLE IF EXISTS taxes;
+DROP TABLE IF EXISTS users;
