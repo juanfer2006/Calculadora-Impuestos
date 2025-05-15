@@ -87,3 +87,12 @@ class CalculatorController:
         """
         cursor.execute(consultation)
         cursor.connection.commit()
+
+    def delete_tax(user_id: str):
+        cursor = CalculatorController.GetCursor()
+        consultation = f"""
+            DELETE FROM taxes WHERE user_id = '{user_id}';
+        """
+        cursor.execute(consultation)
+        cursor.connection.commit()
+

@@ -157,6 +157,19 @@ class calctest(unittest.TestCase):
             new_plastic_bags, new_currency, new_tax_value
         ))
 
+    def test_delete_tax_DB_1(self):
+        user = User(id='12', name='David') # Insertamos usuario primero
+        # Ahora borramos el impuesto
+        CalculatorController.delete_tax(user.id)
+        # Verificamos que ya no exista
+        cursor = CalculatorController.GetCursor()
+        cursor.execute(f"SELECT * FROM taxes WHERE user_id = '{user.id}'")
+        fila = cursor.fetchone()
+
+        self.assertIsNone(fila)
+
+
+
         
 if __name__ == '__main__':
     unittest.main()
