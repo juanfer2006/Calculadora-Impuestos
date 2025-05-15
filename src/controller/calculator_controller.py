@@ -71,3 +71,19 @@ class CalculatorController:
         fila = cursor.fetchone()
         result = User(id=fila[0], name=fila[1])
         return result
+    
+    def update_tax(tax: TaxRecord):
+        cursor = CalculatorController.GetCursor()
+        consultation = f"""
+            UPDATE taxes
+            SET 
+                purchase = {tax.purchase},
+                porcentage = {tax.porcentage},
+                discount = {tax.discount},
+                plastic_bags = {tax.plastic_bags},
+                currency = '{tax.currency}',
+                tax_value = {tax.tax_value}
+            WHERE user_id = '{tax.user_id}';
+        """
+        cursor.execute(consultation)
+        cursor.connection.commit()
