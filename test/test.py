@@ -123,6 +123,51 @@ class calctest(unittest.TestCase):
         # No lanza error si se inserta correctamente
         CalculatorController.insert_tax(tax)
 
+    def test_insert_tax_DB_2(self):
+        user_id = '12'
+        purchase = 500000
+        porcentage = 5
+        discount = 5
+        plastic_bags = 1
+        currency = 'USD'
+
+        tax_value = Taxes.calculate(purchase, porcentage, discount, plastic_bags, currency)
+        tax = TaxRecord(
+            user_id=user_id,
+            purchase=purchase,
+            porcentage=porcentage,
+            discount=discount,
+            plastic_bags=plastic_bags,
+            currency=currency,
+            tax_value=tax_value
+        )
+
+        # No debe lanzar error si se inserta correctamente
+        CalculatorController.insert_tax(tax)
+
+    def test_insert_tax_DB_3(self):
+        user_id = '12'
+        purchase = 2500000
+        porcentage = 19
+        discount = 0
+        plastic_bags = 5
+        currency = 'COP'
+
+        tax_value = Taxes.calculate(purchase, porcentage, discount, plastic_bags, currency)
+        tax = TaxRecord(
+            user_id=user_id,
+            purchase=purchase,
+            porcentage=porcentage,
+            discount=discount,
+            plastic_bags=plastic_bags,
+            currency=currency,
+            tax_value=tax_value
+        )
+
+        # Inserción sin errores esperados
+        CalculatorController.insert_tax(tax)
+
+
     def test_update_tax_DB_1(self):
         user_id = '12'
         # Ahora hacemos la actualización
