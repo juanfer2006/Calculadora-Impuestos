@@ -43,6 +43,7 @@ Para ejecutar las pruebas unitarias, desde la carpeta raiz, use el comando "py t
 3. Una vez creado el proyecto, Neon te proporcionará los datos de conexión:
 4. Copia los valores individuales para configurar el archivo secret_config.py.
 5. Configurar la conexión
+  
 Crea el archivo src/config/secret_config.py con el siguiente contenido, usando los valores proporcionados por Neon, mira SecretConfig_sample.py como ejemplo
 6. Crear las tablas ejecutando los test
 
