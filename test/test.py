@@ -202,6 +202,41 @@ class calctest(unittest.TestCase):
             new_plastic_bags, new_currency, new_tax_value
         ))
 
+    def test_update_tax_DB_2(self):
+        user_id = '12'
+        # Actualización con nuevos valores
+        new_purchase = 3500000
+        new_porcentage = 0
+        new_discount = 10
+        new_plastic_bags = 0
+        new_currency = 'USD'
+
+        new_tax_value = Taxes.calculate(
+            new_purchase, new_porcentage, new_discount, new_plastic_bags, new_currency
+        )
+        updated_tax = TaxRecord(
+            user_id=user_id,
+            purchase=new_purchase,
+            porcentage=new_porcentage,
+            discount=new_discount,
+            plastic_bags=new_plastic_bags,
+            currency=new_currency,
+            tax_value=new_tax_value
+        )
+
+        CalculatorController.update_tax(updated_tax)
+
+        # Verificamos la actualización en la base de datos
+        cursor = CalculatorController.GetCursor()
+        cursor.execute(f"SELECT purchase, porcentage, discount, plastic_bags, currency, tax_value FROM taxes WHERE user_id = '{user_id}'")
+        fila = cursor.fetchone()
+
+        self.assertEqual(fila, (
+            new_purchase, new_porcentage, new_discount,
+            new_plastic_bags, new_currency, new_tax_value
+        ))
+
+
     def test_delete_tax_DB_1(self):
         user = User(id='12', name='David') # Insertamos usuario primero
         # Ahora borramos el impuesto
