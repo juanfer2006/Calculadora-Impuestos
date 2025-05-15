@@ -38,8 +38,8 @@ Para ejecutar las pruebas unitarias, desde la carpeta raiz, use el comando "py t
 ## Crear la base de datos en Neon
 1. Ve a https://neon.tech y crea una cuenta (o inicia sesión).
 2. Crea un nuevo proyecto: 
-- Asigna un nombre al proyecto.
-- Elige una región cercana a ti.
+  - Asigna un nombre al proyecto.
+  - Elige una región cercana a ti.
 3. Una vez creado el proyecto, Neon te proporcionará los datos de conexión:
 4. Copia los valores individuales para configurar el archivo secret_config.py.
 5. Configurar la conexión
