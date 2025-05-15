@@ -4,7 +4,7 @@ from model.calculator import *
 from controller.calculator_controller import *
 
 try:
-    user_id = input("Ingrese su ID de usuario: ")
+    user_id = input("Ingrese su ID de usuario (Ingrese 12): ")
 
     purchase = float(input("Ingrese el valor la compra: "))
     porcentage = float(input('Ingrese el porcentaje de IVA: '))
