@@ -96,3 +96,26 @@ class CalculatorController:
         cursor.execute(consultation)
         cursor.connection.commit()
 
+    def select_tax(user_id: str):
+        cursor = CalculatorController.GetCursor()
+        consultation = f"""
+            SELECT purchase, porcentage, discount, plastic_bags, currency, tax_value
+            FROM taxes
+            WHERE user_id = '{user_id}';
+        """
+        cursor.execute(consultation)
+        fila = cursor.fetchone()
+        if fila:
+            return TaxRecord(
+                user_id=user_id,
+                purchase=fila[0],
+                porcentage=fila[1],
+                discount=fila[2],
+                plastic_bags=fila[3],
+                currency=fila[4],
+                tax_value=fila[5]
+            )
+        return None
+    
+    
+

@@ -168,6 +168,22 @@ class calctest(unittest.TestCase):
 
         self.assertIsNone(fila)
 
+def test_select_tax_DB_1(self):
+    user_id = '12'
+    # Consultamos el impuesto sin insertar nada nuevo
+    tax_from_db = CalculatorController.select_tax(user_id)
+
+    self.assertIsNotNone(tax_from_db)
+    self.assertEqual(tax_from_db.user_id, user_id)
+    self.assertEqual(tax_from_db.purchase, 2000000)  # Según último update que hiciste
+    self.assertEqual(tax_from_db.porcentage, 19)
+    self.assertEqual(tax_from_db.discount, 5)
+    self.assertEqual(tax_from_db.plastic_bags, 2)
+    self.assertEqual(tax_from_db.currency, 'COP')
+    # Calcula valor esperado igual que el guardado
+    expected_tax_value = Taxes.calculate(2000000, 19, 5, 2, 'COP')
+    self.assertAlmostEqual(tax_from_db.tax_value, expected_tax_value)
+
 
 
         
