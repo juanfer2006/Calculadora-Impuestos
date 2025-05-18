@@ -3,6 +3,12 @@ Heiver David Ruales Luna
 
 Juan Fernando Castañeda Agudelo
 
+# Entrega 5:
+
+Juan Fernando Castañeda Agudelo
+
+Kevin Andres Silva Bedoya
+
 # ¿Qué es y para qué es?
 
 Este proyecto es una aplicación diseñada para calcular el impuesto de una compra, considerando diferentes factores como el valor de la compra, el porcentaje de IVA, descuentos, y el costo adicional de las bolsas plásticas. El propósito principal de este proyecto es realizar estos cálculos de manera eficiente, asegurando que los datos proporcionados sean correctos a través de excepciones personalizadas, las cuales validan los parámetros antes de proceder con el cálculo.
