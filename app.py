@@ -3,20 +3,18 @@ from flask import Flask
 
 # Para poder servir plantillas HTML desde archivos, es necesario importar el modulo render_template
 from flask import render_template, request
+import sys
+sys.path.append("src")
+from controller.calculator_controller import CalculatorController
 
+from view.web import usuario
 # Flask constructor: crea una variable que nos servirá para comunicarle a Flask
 # la configuración que queremos para nuestra aplicación
 app = Flask(__name__)     
+app.register_blueprint(usuario.plano)
 
 # decorator: se usa para indicar el URL Path por el que se va a invocar nuestra función
-@app.route('/')      
-def hello():
-    return 'Hola <i>Clase de Codigo Limpio</i> Cruel!'
-  
-# para retornar plantillas HTML almacenadas en la carpeta templates, se usa a render_template  
-@app.route('/hola')      
-def html():
-    return render_template('hola.html')
-    
+
+# Esta linea permite que nuestra aplicación se ejecute individualmente
 if __name__=='__main__':
-   app.run( debug=True)
+   app.run( )
