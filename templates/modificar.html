@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Modificar Datos</title>
+    <style>
+        /* Usa los mismos estilos que insertar.html o personaliza */
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 600px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .compra-item {
+            background: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd; /* Añadí borde para mejor visualización */
+        }
+
+        .btn-actualizar {
+            background: #4CAF50;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s; /* Efecto hover opcional */
+        }
+
+        .btn-actualizar:hover {
+            background: #45a049; /* Color más oscuro al pasar el mouse */
+        }
+
+        .campo-requerido {
+            border: 1px solid #ccc;
+            padding: 8px;
+            width: 100%;
+            box-sizing: border-box; /* Para que el padding no afecte el ancho */
+        }
+        /* ===== FIN DE NUEVOS ESTILOS ===== */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Modificar Datos</h1>
+        
+        <form method="get" action="/buscar_modificar">
+            <div class="form-group">
+                <label for="id">ID del Usuario a modificar:</label>
+                <input type="text" id="id" name="id" required>
+            </div>
+            <button type="submit">Buscar</button>
+        </form>
+
+        {% if user %}
+            <!-- Formulario para modificar usuario -->
+            <form method="post" action="/actualizar_usuario" style="margin-top: 30px;">
+                <h2>Modificar Usuario</h2>
+                <input type="hidden" name="original_id" value="{{ user.id }}">
+                <div class="form-group">
+                    <label>ID:</label>
+                    <input type="text" name="user_id" value="{{ user.id }}" required>
+                </div>
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" name="user_name" value="{{ user.name }}" required>
+                </div>
+                <button type="submit">Actualizar Usuario</button>
+            </form>
+
+            <!-- Lista de compras para modificar -->
+            {% if purchases %}
+                <h2 style="margin-top: 30px;">Compras del Usuario</h2>
+                {% for compra in purchases %}
+                <div class="compra-item">
+                    <form method="post" action="/actualizar_compra">
+                        <input type="hidden" name="compra_id" value="{{ compra.id|default(loop.index0) }}">
+                        <input type="hidden" name="user_id" value="{{ user.id }}">
+                        
+                        <div class="form-group">
+                            <label>Valor de Compra*:</label>
+                            <input type="number" step="0.01" name="purchase" 
+                                value="{{ compra.purchase }}" 
+                                required min="0.01" class="campo-requerido">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Porcentaje IVA*:</label>
+                            <select name="porcentage" required class="campo-requerido">
+                                <option value="0" {% if compra.porcentage == 0 %}selected{% endif %}>0%</option>
+                                <option value="5" {% if compra.porcentage == 5 %}selected{% endif %}>5%</option>
+                                <option value="19" {% if compra.porcentage == 19 %}selected{% endif %}>19%</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Descuento:</label>
+                            <input type="number" step="0.01" name="discount" 
+                                value="{{ compra.discount|default(0) }}" 
+                                min="0" max="100" class="campo-requerido">
+                        </div>
+                        
+                        <button type="submit" class="btn-actualizar">Actualizar Compra</button>
+                        {% if success %}
+                            <div class="success-message" style="color: green; margin: 15px 0;">
+                                {{ success }}
+                            </div>
+                        {% endif %}
+                    </form>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+
+        {% if error %}
+            <div class="error" style="color: red; margin-top: 20px;">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
+    <script>
+        // Función de validación para el formulario de actualización
+        function validarFormulario(form) {
+            const purchase = parseFloat(form.elements.purchase.value);
+            const porcentage = parseFloat(form.elements.porcentage.value);
+            
+            // Validación de compra
+            if (isNaN(purchase) || purchase <= 0) {
+                alert("El valor de compra debe ser un número positivo");
+                return false;
+            }
+            
+            // Validación de porcentaje
+            if (isNaN(porcentage) || ![0, 5, 19].includes(porcentage)) {
+                alert("El porcentaje debe ser 0, 5 o 19");
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Asignar la validación a TODOS los formularios de actualización
+        document.querySelectorAll("form[action='/actualizar_compra']").forEach(form => {
+            form.addEventListener("submit", function(e) {
+                if (!validarFormulario(this)) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

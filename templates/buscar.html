@@ -1,28 +1,113 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-
+    <meta charset="UTF-8">
+    <title>Buscar Usuario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 60px auto;
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label, input, .result {
+            width: 100%;
+            margin-top: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .result {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
 </head>
-
 <body>
-    <form action="/lista_tarjetas">
+    <div class="container">
+        <h1>Buscar Usuario</h1>
+        <form method="get" action="/buscar">
+            <label for="id">ID del usuario:</label>
+            <input type="text" id="id" name="id" required>
+            <input type="submit" value="Buscar">
+        </form>
 
-        <h1>Buscar una tarjeta</h1>
+        <!-- RESULTADOS -->
+        {% if user %}
+            <div class="result">
+                <p><strong>ID:</strong> {{ user.id }}</p>
+                <p><strong>Nombre:</strong> {{ user.name }}</p>
+            </div>
 
-        <p>Ingrese el número de cédula del tarjetahabiente, para obtener las tarjetas que tiene registradas</p>
+            {% if purchases %}
+                <div class="result">
+                    <h3>Compras</h3>
+                    <table border="1" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th>Compra</th>
+                                <th>Porcentaje</th>
+                                <th>Descuento</th>
+                                <th>Bolsas Plásticas</th>
+                                <th>Moneda</th>
+                                <th>Valor Impuesto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for compra in purchases %}
+                                <tr>
+                                    <td>{{ compra.purchase }}</td>
+                                    <td>{{ compra.porcentage }}</td>
+                                    <td>{{ compra.discount }}</td>
+                                    <td>{{ compra.plastic_bags }}</td>
+                                    <td>{{ compra.currency }}</td>
+                                    <td>{{ compra.tax_value }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="result">
+                    <p>Este usuario no tiene compras registradas.</p>
+                </div>
+            {% endif %}
 
-        <div>
-            Cédula: <input type="text" name="cedula" />
-            <div> Departamento: <select name="codigo_departamento">
-            <option value="05">Antioquia</option>
-            <option value="11">Bogotá</option>
-            <option value="76">Valle del Cauca</option>
-            </select>
-        </div>
-        </div>
-        <input type="submit" value="Buscar" />
-    </form>
+        {% elif error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
 </body>
-
 </html>
