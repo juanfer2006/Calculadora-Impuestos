@@ -315,3 +315,64 @@
 2025-05-26 13:30:54,169 [INFO]  * Detected change in 'c:\\Users\\Usuario\\Desktop\\calculadora_impuesto\\Calculadora-Impuestos\\src\\controller\\calculator_controller.py', reloading
 2025-05-26 13:30:54,172 [INFO]  * Detected change in 'C:\\Users\\Usuario\\Desktop\\calculadora_impuesto\\Calculadora-Impuestos\\src\\controller\\calculator_controller.py', reloading
 2025-05-26 13:30:59,273 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-26 15:07:23,367 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 15:07:23,368 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 15:07:23,377 [INFO]  * Restarting with stat
+2025-05-26 15:07:32,684 [WARNING]  * Debugger is active!
+2025-05-26 15:07:32,691 [INFO]  * Debugger PIN: 827-141-283
+2025-05-26 15:07:56,544 [INFO] 127.0.0.1 - - [26/May/2025 15:07:56] "GET / HTTP/1.1" 200 -
+2025-05-26 15:07:57,211 [INFO] 127.0.0.1 - - [26/May/2025 15:07:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-26 15:08:22,151 [INFO] 127.0.0.1 - - [26/May/2025 15:08:22] "GET /buscar HTTP/1.1" 200 -
+2025-05-26 15:08:28,536 [INFO] 127.0.0.1 - - [26/May/2025 15:08:28] "GET /hola HTTP/1.1" 200 -
+2025-05-26 15:08:33,909 [INFO] 127.0.0.1 - - [26/May/2025 15:08:33] "GET /buscar HTTP/1.1" 200 -
+2025-05-26 15:08:36,607 [INFO] 127.0.0.1 - - [26/May/2025 15:08:36] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:08:47,584 [INFO] 127.0.0.1 - - [26/May/2025 15:08:47] "POST /insertar_usuario HTTP/1.1" 200 -
+2025-05-26 15:10:40,265 [INFO] 127.0.0.1 - - [26/May/2025 15:10:40] "POST /insertar_usuario HTTP/1.1" 200 -
+2025-05-26 15:10:47,788 [INFO] 127.0.0.1 - - [26/May/2025 15:10:47] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:30:08,023 [INFO]  * Detected change in 'C:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 15:30:08,370 [INFO]  * Restarting with stat
+2025-05-26 15:42:17,159 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 15:42:17,160 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 15:42:17,163 [INFO]  * Restarting with stat
+2025-05-26 15:42:26,303 [WARNING]  * Debugger is active!
+2025-05-26 15:42:26,314 [INFO]  * Debugger PIN: 827-141-283
+2025-05-26 15:42:36,838 [INFO] 127.0.0.1 - - [26/May/2025 15:42:36] "GET / HTTP/1.1" 200 -
+2025-05-26 15:42:39,337 [INFO] 127.0.0.1 - - [26/May/2025 15:42:39] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 15:42:45,829 [INFO] 127.0.0.1 - - [26/May/2025 15:42:45] "GET /buscar_modificar?id=1011 HTTP/1.1" 200 -
+2025-05-26 15:43:31,525 [INFO] 127.0.0.1 - - [26/May/2025 15:43:31] "GET /buscar HTTP/1.1" 200 -
+2025-05-26 15:43:36,432 [INFO] 127.0.0.1 - - [26/May/2025 15:43:36] "GET /hola HTTP/1.1" 200 -
+2025-05-26 15:43:39,347 [INFO] 127.0.0.1 - - [26/May/2025 15:43:39] "GET /buscar HTTP/1.1" 200 -
+2025-05-26 15:44:01,146 [INFO] 127.0.0.1 - - [26/May/2025 15:44:01] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:44:01,161 [INFO] 127.0.0.1 - - [26/May/2025 15:44:01] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:44:13,956 [INFO] 127.0.0.1 - - [26/May/2025 15:44:13] "POST /insertar_usuario HTTP/1.1" 200 -
+2025-05-26 15:44:36,179 [INFO] 127.0.0.1 - - [26/May/2025 15:44:36] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 15:45:21,416 [INFO] 127.0.0.1 - - [26/May/2025 15:45:21] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:45:40,722 [INFO] 127.0.0.1 - - [26/May/2025 15:45:40] "POST /insertar_usuario HTTP/1.1" 200 -
+2025-05-26 15:51:23,721 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 15:51:23,722 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 15:51:23,725 [INFO]  * Restarting with stat
+2025-05-26 15:51:32,966 [WARNING]  * Debugger is active!
+2025-05-26 15:51:32,982 [INFO]  * Debugger PIN: 827-141-283
+2025-05-26 15:51:36,377 [INFO] 127.0.0.1 - - [26/May/2025 15:51:36] "GET / HTTP/1.1" 200 -
+2025-05-26 15:51:41,712 [INFO] 127.0.0.1 - - [26/May/2025 15:51:41] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 15:51:48,357 [INFO] 127.0.0.1 - - [26/May/2025 15:51:48] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:51:51,087 [INFO] 127.0.0.1 - - [26/May/2025 15:51:51] "GET /buscar HTTP/1.1" 200 -
+2025-05-26 15:51:56,257 [INFO] 127.0.0.1 - - [26/May/2025 15:51:56] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:59:10,331 [INFO] 127.0.0.1 - - [26/May/2025 15:59:10] "GET / HTTP/1.1" 200 -
+2025-05-26 15:59:11,433 [INFO] 127.0.0.1 - - [26/May/2025 15:59:11] "GET / HTTP/1.1" 200 -
+2025-05-26 15:59:12,668 [INFO] 127.0.0.1 - - [26/May/2025 15:59:12] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 15:59:18,666 [INFO] 127.0.0.1 - - [26/May/2025 15:59:18] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:59:31,393 [INFO] 127.0.0.1 - - [26/May/2025 15:59:31] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 15:59:39,248 [INFO] 127.0.0.1 - - [26/May/2025 15:59:39] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 16:02:31,112 [INFO] 127.0.0.1 - - [26/May/2025 16:02:31] "GET / HTTP/1.1" 200 -
+2025-05-26 16:02:31,657 [INFO] 127.0.0.1 - - [26/May/2025 16:02:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-26 16:02:33,267 [INFO] 127.0.0.1 - - [26/May/2025 16:02:33] "GET / HTTP/1.1" 200 -
+2025-05-26 16:02:34,949 [INFO] 127.0.0.1 - - [26/May/2025 16:02:34] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 16:02:41,062 [INFO] 127.0.0.1 - - [26/May/2025 16:02:41] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 16:02:44,592 [INFO] 127.0.0.1 - - [26/May/2025 16:02:44] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 16:12:17,582 [INFO] 127.0.0.1 - - [26/May/2025 16:12:17] "GET / HTTP/1.1" 200 -
+2025-05-26 16:12:22,962 [INFO] 127.0.0.1 - - [26/May/2025 16:12:22] "[33mGET /crear_tablas HTTP/1.1[0m" 404 -
+2025-05-26 16:12:33,259 [INFO] 127.0.0.1 - - [26/May/2025 16:12:33] "GET /modificar HTTP/1.1" 200 -

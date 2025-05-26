@@ -18,3 +18,5 @@ app.register_blueprint(usuario.plano)
 # Esta linea permite que nuestra aplicación se ejecute individualmente
 if __name__=='__main__':
    app.run( debug=True)
+
+   
