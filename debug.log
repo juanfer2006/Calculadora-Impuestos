@@ -404,3 +404,21 @@
 2025-05-26 17:58:41,896 [INFO] 127.0.0.1 - - [26/May/2025 17:58:41] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
 2025-05-26 18:17:38,894 [INFO]  * Detected change in 'c:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\controller\\calculator_controller.py', reloading
 2025-05-26 18:17:39,402 [INFO]  * Restarting with stat
+2025-05-26 19:12:55,095 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 19:12:55,095 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 19:12:55,106 [INFO]  * Restarting with stat
+2025-05-26 19:13:06,286 [WARNING]  * Debugger is active!
+2025-05-26 19:13:06,374 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 19:13:07,045 [INFO] 127.0.0.1 - - [26/May/2025 19:13:07] "GET / HTTP/1.1" 200 -
+2025-05-26 19:13:10,410 [INFO] 127.0.0.1 - - [26/May/2025 19:13:10] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 19:13:18,653 [INFO] 127.0.0.1 - - [26/May/2025 19:13:18] "POST /insertar_usuario HTTP/1.1" 200 -
+2025-05-26 19:13:54,938 [INFO] 127.0.0.1 - - [26/May/2025 19:13:54] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 19:14:00,409 [INFO] 127.0.0.1 - - [26/May/2025 19:14:00] "GET /buscar_modificar?id=19 HTTP/1.1" 200 -
+2025-05-26 19:14:08,917 [INFO] 127.0.0.1 - - [26/May/2025 19:14:08] "GET /buscar HTTP/1.1" 200 -
+2025-05-26 19:14:13,851 [INFO] 127.0.0.1 - - [26/May/2025 19:14:13] "GET /buscar?id=12 HTTP/1.1" 200 -
+2025-05-26 19:15:21,434 [INFO] 127.0.0.1 - - [26/May/2025 19:15:21] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 19:15:21,521 [INFO] 127.0.0.1 - - [26/May/2025 19:15:21] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2025-05-26 19:16:09,624 [INFO] 127.0.0.1 - - [26/May/2025 19:16:09] "GET /hola HTTP/1.1" 200 -
+2025-05-26 19:16:15,578 [INFO] 127.0.0.1 - - [26/May/2025 19:16:15] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 19:16:15,663 [INFO] 127.0.0.1 - - [26/May/2025 19:16:15] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
