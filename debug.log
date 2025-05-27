@@ -568,3 +568,64 @@
 2025-05-26 21:17:11,090 [INFO] 127.0.0.1 - - [26/May/2025 21:17:11] "GET /buscar HTTP/1.1" 200 -
 2025-05-26 21:17:14,924 [INFO] 127.0.0.1 - - [26/May/2025 21:17:14] "GET /insertar HTTP/1.1" 200 -
 2025-05-26 21:17:27,522 [INFO] 127.0.0.1 - - [26/May/2025 21:17:27] "POST /insertar_usuario HTTP/1.1" 200 -
+2025-05-27 08:31:29,262 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-27 08:31:29,268 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-27 08:31:29,307 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-27 08:31:31,640 [WARNING]  * Debugger is active!
+2025-05-27 08:31:31,640 [INFO]  * Debugger PIN: 106-549-574
+2025-05-27 08:36:18,755 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-27 08:36:18,755 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-27 08:36:18,795 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-27 08:36:20,722 [WARNING]  * Debugger is active!
+2025-05-27 08:36:20,736 [INFO]  * Debugger PIN: 106-549-574
+2025-05-27 08:46:18,218 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-27 08:46:18,218 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-27 08:46:18,255 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-27 08:46:20,210 [WARNING]  * Debugger is active!
+2025-05-27 08:46:20,222 [INFO]  * Debugger PIN: 106-549-574
+2025-05-27 08:46:27,706 [INFO] 127.0.0.1 - - [27/May/2025 08:46:27] "GET / HTTP/1.1" 200 -
+2025-05-27 08:46:31,299 [INFO] 127.0.0.1 - - [27/May/2025 08:46:31] "GET /modificar HTTP/1.1" 200 -
+2025-05-27 08:46:38,989 [INFO] 127.0.0.1 - - [27/May/2025 08:46:38] "GET /buscar_modificar?id=12 HTTP/1.1" 200 -
+2025-05-27 08:46:53,936 [INFO] 127.0.0.1 - - [27/May/2025 08:46:53] "[32mPOST /actualizar_compra HTTP/1.1[0m" 302 -
+2025-05-27 08:46:55,797 [INFO] 127.0.0.1 - - [27/May/2025 08:46:55] "GET /buscar_modificar?id=12&success=¡Compra+actualizada+correctamente! HTTP/1.1" 200 -
+2025-05-27 08:47:14,414 [INFO] 127.0.0.1 - - [27/May/2025 08:47:14] "[32mPOST /actualizar_compra HTTP/1.1[0m" 302 -
+2025-05-27 08:47:16,156 [INFO] 127.0.0.1 - - [27/May/2025 08:47:16] "GET /buscar_modificar?id=12&success=¡Compra+actualizada+correctamente! HTTP/1.1" 200 -
+2025-05-27 08:47:48,728 [INFO] 127.0.0.1 - - [27/May/2025 08:47:48] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-27 08:47:53,357 [INFO] 127.0.0.1 - - [27/May/2025 08:47:53] "GET / HTTP/1.1" 200 -
+2025-05-27 08:48:11,984 [INFO] 127.0.0.1 - - [27/May/2025 08:48:11] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-27 08:48:17,935 [INFO] 127.0.0.1 - - [27/May/2025 08:48:17] "GET / HTTP/1.1" 200 -
+2025-05-27 08:48:20,439 [INFO] 127.0.0.1 - - [27/May/2025 08:48:20] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-27 08:48:22,869 [INFO] 127.0.0.1 - - [27/May/2025 08:48:22] "GET / HTTP/1.1" 200 -
+2025-05-27 08:57:03,342 [INFO]  * Detected change in 'c:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:57:03,344 [INFO]  * Detected change in 'C:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:57:03,376 [INFO]  * Detected change in 'c:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:57:03,376 [INFO]  * Detected change in 'C:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:57:03,383 [INFO]  * Detected change in 'c:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:57:04,604 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-27 08:57:06,833 [WARNING]  * Debugger is active!
+2025-05-27 08:57:06,841 [INFO]  * Debugger PIN: 106-549-574
+2025-05-27 08:59:23,966 [INFO]  * Detected change in 'C:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:59:23,968 [INFO]  * Detected change in 'c:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:59:24,004 [INFO]  * Detected change in 'c:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:59:24,006 [INFO]  * Detected change in 'C:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:59:24,006 [INFO]  * Detected change in 'c:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:59:24,006 [INFO]  * Detected change in 'C:\\Users\\Usuario\\Desktop\\Calculadora_impuestos\\Calculadora-Impuestos\\src\\SecretConfig.py', reloading
+2025-05-27 08:59:25,247 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-27 08:59:27,771 [WARNING]  * Debugger is active!
+2025-05-27 08:59:27,784 [INFO]  * Debugger PIN: 106-549-574
+2025-05-27 09:18:50,862 [INFO]  * Detected change in 'C:\\Users\\Usuario\\anaconda3\\Lib\\site-packages\\_pytest\\cacheprovider.py', reloading
+2025-05-27 09:18:52,239 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-27 09:18:54,505 [WARNING]  * Debugger is active!
+2025-05-27 09:18:54,514 [INFO]  * Debugger PIN: 106-549-574
+2025-05-27 09:25:14,158 [INFO]  * Detected change in 'C:\\Users\\Usuario\\anaconda3\\Lib\\typing.py', reloading
+2025-05-27 09:25:15,333 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-27 09:25:17,584 [WARNING]  * Debugger is active!
+2025-05-27 09:25:17,584 [INFO]  * Debugger PIN: 106-549-574
+2025-05-27 11:20:19,302 [INFO]  * Detected change in 'C:\\Users\\Usuario\\anaconda3\\Lib\\random.py', reloading
+2025-05-27 11:20:20,611 [INFO]  * Restarting with watchdog (windowsapi)
+2025-05-27 11:20:22,578 [WARNING]  * Debugger is active!
+2025-05-27 11:20:22,585 [INFO]  * Debugger PIN: 106-549-574
+2025-05-27 12:26:57,820 [INFO] 127.0.0.1 - - [27/May/2025 12:26:57] "GET /buscar_modificar?id=13&success=¡Compra+actualizada+correctamente! HTTP/1.1" 200 -

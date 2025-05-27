@@ -47,7 +47,7 @@ Para ejecutar las pruebas unitarias, desde la carpeta raiz, use el comando "py t
   - Asigna un nombre al proyecto.
   - Elige una región cercana a ti.
 3. Una vez creado el proyecto, Neon te proporcionará los datos de conexión:
-4. Copia los valores de Connection string y pegalos en el archivo secret_config.py.
+4. Copia los valores de Connection string y pegalos en el archivo secret_config.py el cual esta en src.
 5. Configurar la conexión
 Crear las tablas ejecutando los test
   
