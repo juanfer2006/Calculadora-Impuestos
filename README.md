@@ -40,7 +40,6 @@ Arquitectura del Proyecto
 # Uso
 Para ejecutar las pruebas unitarias, desde la carpeta raiz, use el comando "py test\test.py".
 
-<<<<<<< HEAD
 # Instrucciones para crear la base de datos y conexión
 ## Crear la base de datos en Neon
 1. Ve a https://neon.tech y crea una cuenta (o inicia sesión).
@@ -50,34 +49,14 @@ Para ejecutar las pruebas unitarias, desde la carpeta raiz, use el comando "py t
 3. Una vez creado el proyecto, Neon te proporcionará los datos de conexión:
 4. Copia los valores de Connection string y pegalos en el archivo secret_config.py.
 5. Configurar la conexión
+Crear las tablas ejecutando los test
+  
+Crea el archivo src/config/secret_config.py con el siguiente contenido, usando los valores proporcionados por Neon, mira SecretConfig_sample.py como ejemplo
 6. Crear las tablas ejecutando los test
-=======
-# Ejecución de la Aplicación Web Localmente con Base de Datos en Blanco
->>>>>>> fba324bd48db798bc94f84ce67b7ff127dbfc086
 
-# Configuración de la base de datos
-Para esta aplicación, se utiliza Neon como servicio de base de datos PostgreSQL. Debes crear una cuenta en Neon y configurar un nuevo proyecto. Al crear el proyecto, Neon te proporcionará una URL de conexión que deberás usar para conectar la aplicación a la base de datos.
 
-Dentro de tu proyecto local, debes crear un archivo de configuración donde colocarás esta URL para que la aplicación pueda acceder a la base de datos.
 
-# Creación de las tablas en la base de datos
-Una vez configurada la conexión, la aplicación cuenta con mecanismos para crear automáticamente las tablas necesarias en la base de datos vacía. Esto se realiza mediante la ejecución de scripts o pruebas que inicializan la estructura de la base de datos con los modelos definidos.
 
-Asegúrate de que esta creación de tablas se haya completado exitosamente antes de iniciar la aplicación para evitar errores en la ejecución.
-
-# Ejecución de la aplicación web
-Para iniciar la aplicación web localmente, desde la carpeta raíz del proyecto debes ejecutar el archivo principal que contiene la configuración del servidor web. Esto levantará el servidor Flask en modo desarrollo, generalmente accesible a través de la dirección local en el puerto 5000.
-
-Una vez que el servidor esté corriendo, podrás abrir tu navegador y acceder a la interfaz web mediante la dirección indicada para interactuar con la aplicación.
-
-# Uso de la aplicación web
-
-Desde la interfaz web, podrás ingresar datos relacionados con las compras y sus respectivos impuestos. Estos datos se procesarán, calcularán los impuestos correspondientes y se almacenarán en la base de datos configurada en Neon.
-
-Notas importantes
-Si realizas cambios en la estructura de datos o modelos, recuerda actualizar o recrear las tablas en la base de datos para mantener la consistencia con la aplicación.
-
-Para detener el servidor web, simplemente cierra la terminal o usa la combinación de teclas para detener la ejecución del programa.
 
 # Escenarios Específicos para Cálculo de Impuestos
 
