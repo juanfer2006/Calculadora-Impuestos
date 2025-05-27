@@ -248,3 +248,17 @@ def actualizar_compra():
                                error="Error interno al procesar la solicitud",
                                form_data=request.form)
 
+# --- NUEVA RUTA AGREGADA PARA CREAR LAS TABLAS ---
+@plano.route('/crear_tablas')
+def crear_tablas():
+    try:
+        from src.db import db  # Ajusta esta importación según tu estructura real
+        from src.model.calculator import Base  # Ajusta si es necesario
+
+        Base.metadata.create_all(bind=db.engine)
+
+        return render_template('crear_tablas.html', mensaje="Tablas creadas correctamente")
+    except Exception as e:
+        return render_template('crear_tablas.html', mensaje=f"Error al crear tablas: {str(e)}")
+
+

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablas creadas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">  <!-- Opcional -->
+</head>
+<body>
+    <h1>✅ Tablas creadas exitosamente</h1>
+    <p>La base de datos ha sido inicializada con todas las tablas necesarias.</p>
+    <a href="{{ url_for('vista_usuarios.Home') }}">Volver al menú principal</a>
+</body>
+</html>

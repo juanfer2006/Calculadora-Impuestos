@@ -10,13 +10,8 @@ class CalculatorController:
 
     @staticmethod
     def GetCursor():
-        connection = psycopg2.connect(
-            database=SecretConfig.PGDATABASE, 
-            user=SecretConfig.PGUSER, 
-            password=SecretConfig.PGPASSWORD, 
-            host=SecretConfig.PGHOST, 
-            port=SecretConfig.PGPORT
-        )
+        # Conexión directa usando DATABASE_URL para Neon
+        connection = psycopg2.connect(SecretConfig.DATABASE_URL)
         cursor = connection.cursor()
         return cursor
 
@@ -121,12 +116,10 @@ class CalculatorController:
     def update_user(original_id: str, new_id: str, new_name: str):
         cursor = CalculatorController.GetCursor()
         try:
-            # Verifica que el usuario original exista
             cursor.execute("SELECT id_user FROM users WHERE id_user = %s", (original_id,))
             if cursor.rowcount == 0:
                 raise Exception(f"Usuario con ID '{original_id}' no existe")
 
-            # Actualiza usuario
             cursor.execute("""
                 UPDATE users
                 SET id_user = %s, name_user = %s
@@ -203,3 +196,4 @@ class CalculatorController:
         consultation = "DELETE FROM taxes WHERE id = %s"
         cursor.execute(consultation, (purchase_id,))
         cursor.connection.commit()
+
