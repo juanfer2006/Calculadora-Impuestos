@@ -1,2 +1,2 @@
 #Aqui va el Connection string 
-DATABASE_URL = ""
+DATABASE_URL = "aca"
