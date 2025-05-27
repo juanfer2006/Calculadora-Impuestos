@@ -40,7 +40,7 @@ def hola():
 
 @plano.errorhandler(Exception)
 def controlar_errores(err):
-    return "Ocurrió un error: "+ str(err)
+    return "Ocurrió un error: " + str(err)
 
 @plano.route('/buscar', methods=["GET"])
 def buscar():
@@ -250,15 +250,12 @@ def actualizar_compra():
 
 # --- NUEVA RUTA AGREGADA PARA CREAR LAS TABLAS ---
 @plano.route('/crear_tablas')
+@plano.route('/crear_tablas')
 def crear_tablas():
     try:
-        from src.db import db  # Ajusta esta importación según tu estructura real
-        from src.model.calculator import Base  # Ajusta si es necesario
-
-        Base.metadata.create_all(bind=db.engine)
-
-        return render_template('crear_tablas.html', mensaje="Tablas creadas correctamente")
+        from model import db
+        db.create_all()
+        return render_template('crear_tablas.html', mensaje="✅ Tablas creadas correctamente")
     except Exception as e:
-        return render_template('crear_tablas.html', mensaje=f"Error al crear tablas: {str(e)}")
-
+        return render_template('crear_tablas.html', mensaje=f"❌ Error al crear tablas: {str(e)}")
 

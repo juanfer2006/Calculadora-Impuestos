@@ -422,3 +422,138 @@
 2025-05-26 19:16:09,624 [INFO] 127.0.0.1 - - [26/May/2025 19:16:09] "GET /hola HTTP/1.1" 200 -
 2025-05-26 19:16:15,578 [INFO] 127.0.0.1 - - [26/May/2025 19:16:15] "GET /crear_tablas HTTP/1.1" 200 -
 2025-05-26 19:16:15,663 [INFO] 127.0.0.1 - - [26/May/2025 19:16:15] "[33mGET /static/styles.css HTTP/1.1[0m" 404 -
+2025-05-26 19:52:11,574 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 19:52:11,574 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 19:52:11,591 [INFO]  * Restarting with stat
+2025-05-26 19:52:21,733 [WARNING]  * Debugger is active!
+2025-05-26 19:52:21,750 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:00:08,130 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 20:00:08,136 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 20:00:08,141 [INFO]  * Restarting with stat
+2025-05-26 20:00:21,952 [WARNING]  * Debugger is active!
+2025-05-26 20:00:21,972 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:00:22,229 [INFO] 127.0.0.1 - - [26/May/2025 20:00:22] "GET / HTTP/1.1" 200 -
+2025-05-26 20:00:25,067 [INFO] 127.0.0.1 - - [26/May/2025 20:00:25] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:00:29,967 [INFO] 127.0.0.1 - - [26/May/2025 20:00:29] "GET / HTTP/1.1" 200 -
+2025-05-26 20:00:31,743 [INFO] 127.0.0.1 - - [26/May/2025 20:00:31] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:00:34,118 [INFO] 127.0.0.1 - - [26/May/2025 20:00:34] "GET / HTTP/1.1" 200 -
+2025-05-26 20:00:35,966 [INFO] 127.0.0.1 - - [26/May/2025 20:00:35] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 20:00:39,227 [INFO] 127.0.0.1 - - [26/May/2025 20:00:39] "GET /modificar HTTP/1.1" 200 -
+2025-05-26 20:00:46,297 [INFO] 127.0.0.1 - - [26/May/2025 20:00:46] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 20:01:07,008 [INFO] 127.0.0.1 - - [26/May/2025 20:01:07] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 20:01:15,047 [INFO] 127.0.0.1 - - [26/May/2025 20:01:15] "POST /insertar_usuario HTTP/1.1" 200 -
+2025-05-26 20:01:21,121 [INFO] 127.0.0.1 - - [26/May/2025 20:01:21] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:05:18,412 [INFO]  * Detected change in 'C:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 20:05:19,747 [INFO]  * Restarting with stat
+2025-05-26 20:05:30,418 [WARNING]  * Debugger is active!
+2025-05-26 20:05:30,434 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:06:32,457 [INFO]  * Detected change in 'C:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 20:06:33,145 [INFO]  * Restarting with stat
+2025-05-26 20:06:51,449 [WARNING]  * Debugger is active!
+2025-05-26 20:06:51,472 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:08:16,503 [INFO]  * Detected change in 'C:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 20:08:16,781 [INFO]  * Restarting with stat
+2025-05-26 20:08:35,085 [WARNING]  * Debugger is active!
+2025-05-26 20:08:35,093 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:11:12,258 [INFO]  * Detected change in 'c:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 20:11:58,219 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 20:11:58,222 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 20:11:58,227 [INFO]  * Restarting with stat
+2025-05-26 20:12:09,538 [WARNING]  * Debugger is active!
+2025-05-26 20:12:09,631 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:12:10,219 [INFO] 127.0.0.1 - - [26/May/2025 20:12:10] "GET / HTTP/1.1" 200 -
+2025-05-26 20:12:12,919 [INFO] 127.0.0.1 - - [26/May/2025 20:12:12] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:17:13,819 [INFO]  * Detected change in 'C:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 20:17:14,528 [INFO]  * Restarting with stat
+2025-05-26 20:17:25,691 [WARNING]  * Debugger is active!
+2025-05-26 20:17:25,703 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:20:21,064 [INFO]  * Detected change in 'c:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 20:20:21,636 [INFO]  * Restarting with stat
+2025-05-26 20:25:00,936 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 20:25:00,944 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 20:25:00,944 [INFO]  * Restarting with stat
+2025-05-26 20:25:13,051 [WARNING]  * Debugger is active!
+2025-05-26 20:25:13,070 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:25:13,249 [INFO] 127.0.0.1 - - [26/May/2025 20:25:13] "GET / HTTP/1.1" 200 -
+2025-05-26 20:25:16,557 [INFO] 127.0.0.1 - - [26/May/2025 20:25:16] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:30:19,480 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 20:30:19,481 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 20:30:19,492 [INFO]  * Restarting with stat
+2025-05-26 20:30:32,409 [WARNING]  * Debugger is active!
+2025-05-26 20:30:32,465 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:30:32,883 [INFO] 127.0.0.1 - - [26/May/2025 20:30:32] "GET / HTTP/1.1" 200 -
+2025-05-26 20:30:39,059 [INFO] 127.0.0.1 - - [26/May/2025 20:30:39] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:30:39,068 [INFO] 127.0.0.1 - - [26/May/2025 20:30:39] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:32:11,991 [INFO]  * Detected change in 'c:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\model\\db.py', reloading
+2025-05-26 20:32:14,202 [INFO]  * Restarting with stat
+2025-05-26 20:32:25,116 [WARNING]  * Debugger is active!
+2025-05-26 20:32:25,134 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:34:00,534 [INFO]  * Detected change in 'c:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\model\\db.py', reloading
+2025-05-26 20:34:02,199 [INFO]  * Restarting with stat
+2025-05-26 20:34:14,282 [WARNING]  * Debugger is active!
+2025-05-26 20:34:14,305 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:34:29,754 [INFO]  * Detected change in 'C:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\model\\db.py', reloading
+2025-05-26 20:34:30,262 [INFO]  * Restarting with stat
+2025-05-26 20:34:41,282 [WARNING]  * Debugger is active!
+2025-05-26 20:34:41,290 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:35:24,362 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 20:35:24,362 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 20:35:24,362 [INFO]  * Restarting with stat
+2025-05-26 20:35:37,464 [WARNING]  * Debugger is active!
+2025-05-26 20:35:37,484 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:35:37,813 [INFO] 127.0.0.1 - - [26/May/2025 20:35:37] "GET / HTTP/1.1" 200 -
+2025-05-26 20:35:40,032 [INFO] 127.0.0.1 - - [26/May/2025 20:35:40] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:40:18,507 [INFO] 127.0.0.1 - - [26/May/2025 20:40:18] "GET /insertar HTTP/1.1" 200 -
+2025-05-26 20:40:29,071 [INFO] 127.0.0.1 - - [26/May/2025 20:40:29] "GET /buscar HTTP/1.1" 200 -
+2025-05-26 20:40:33,622 [INFO] 127.0.0.1 - - [26/May/2025 20:40:33] "GET /buscar?id=19 HTTP/1.1" 200 -
+2025-05-26 20:40:42,503 [INFO] 127.0.0.1 - - [26/May/2025 20:40:42] "GET /buscar?id=18 HTTP/1.1" 200 -
+2025-05-26 20:40:48,322 [INFO] 127.0.0.1 - - [26/May/2025 20:40:48] "GET /buscar?id=12 HTTP/1.1" 200 -
+2025-05-26 20:50:57,023 [INFO] 127.0.0.1 - - [26/May/2025 20:50:57] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 20:52:22,911 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 20:52:22,911 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 20:52:22,915 [INFO]  * Restarting with stat
+2025-05-26 20:52:35,096 [WARNING]  * Debugger is active!
+2025-05-26 20:52:35,126 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 20:52:35,397 [INFO] 127.0.0.1 - - [26/May/2025 20:52:35] "GET / HTTP/1.1" 200 -
+2025-05-26 20:52:41,349 [INFO] 127.0.0.1 - - [26/May/2025 20:52:41] "GET /buscar HTTP/1.1" 200 -
+2025-05-26 20:52:48,263 [INFO] 127.0.0.1 - - [26/May/2025 20:52:48] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 21:05:48,906 [INFO]  * Detected change in 'c:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\model\\__init__.py', reloading
+2025-05-26 21:05:50,402 [INFO]  * Restarting with stat
+2025-05-26 21:06:06,124 [WARNING]  * Debugger is active!
+2025-05-26 21:06:06,140 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 21:07:01,317 [INFO]  * Detected change in 'C:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 21:07:03,163 [INFO]  * Restarting with stat
+2025-05-26 21:07:25,558 [WARNING]  * Debugger is active!
+2025-05-26 21:07:25,574 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 21:08:19,211 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-26 21:08:19,214 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-26 21:08:19,220 [INFO]  * Restarting with stat
+2025-05-26 21:08:29,777 [WARNING]  * Debugger is active!
+2025-05-26 21:08:29,788 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 21:08:44,763 [INFO] 127.0.0.1 - - [26/May/2025 21:08:44] "GET / HTTP/1.1" 200 -
+2025-05-26 21:08:47,154 [INFO] 127.0.0.1 - - [26/May/2025 21:08:47] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 21:10:16,253 [INFO]  * Detected change in 'C:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\view\\web\\usuario.py', reloading
+2025-05-26 21:10:17,665 [INFO]  * Restarting with stat
+2025-05-26 21:10:38,704 [WARNING]  * Debugger is active!
+2025-05-26 21:10:38,720 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 21:10:42,928 [INFO] 127.0.0.1 - - [26/May/2025 21:10:42] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 21:10:44,118 [INFO] 127.0.0.1 - - [26/May/2025 21:10:44] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 21:10:45,346 [INFO] 127.0.0.1 - - [26/May/2025 21:10:45] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 21:10:46,698 [INFO] 127.0.0.1 - - [26/May/2025 21:10:46] "GET / HTTP/1.1" 200 -
+2025-05-26 21:10:48,148 [INFO] 127.0.0.1 - - [26/May/2025 21:10:48] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-26 21:13:01,538 [INFO]  * Detected change in 'c:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\app.py', reloading
+2025-05-26 21:13:04,582 [INFO]  * Restarting with stat
+2025-05-26 21:13:27,420 [WARNING]  * Debugger is active!
+2025-05-26 21:13:27,616 [INFO]  * Debugger PIN: 829-175-071
+2025-05-26 21:15:12,661 [INFO]  * Detected change in 'c:\\Users\\Kevin\\Calculadora Impuestos\\Calculadora-Impuestos\\src\\model\\calculator.py', reloading
+2025-05-26 21:15:15,645 [INFO]  * Restarting with stat
+2025-05-26 21:15:32,864 [WARNING]  * Debugger is active!
+2025-05-26 21:15:32,880 [INFO]  * Debugger PIN: 829-175-071

@@ -1,22 +1,23 @@
-# Para las aplicaciones web creadas con Flask, debemos importar siempre el modulo 
 from flask import Flask    
-
-# Para poder servir plantillas HTML desde archivos, es necesario importar el modulo render_template
-from flask import render_template
 import sys
 sys.path.append("src")
 
-
+from model import db
 from view.web import usuario
-# Flask constructor: crea una variable que nos servirá para comunicarle a Flask
-# la configuración que queremos para nuestra aplicación
-app = Flask(__name__)     
-app.register_blueprint(usuario.plano)
 
-# decorator: se usa para indicar el URL Path por el que se va a invocar nuestra función
+def create_app():
+    app = Flask(__name__)
+    
+    # Configura tu base de datos aquí (ajusta la URI a la que uses)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'  
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    
+    db.init_app(app)  # Vincula la instancia db con la app
+    
+    app.register_blueprint(usuario.plano)
+    
+    return app
 
-# Esta linea permite que nuestra aplicación se ejecute individualmente
-if __name__=='__main__':
-   app.run( debug=True)
-
-   
+if __name__ == '__main__':
+    app = create_app()
+    app.run(debug=True)

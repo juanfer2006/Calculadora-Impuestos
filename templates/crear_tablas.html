@@ -1,13 +1,87 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Tablas creadas</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">  <!-- Opcional -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crear Tablas - Calculadora Impuestos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+            padding: 2rem 3rem;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #34495e;
+        }
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #3498db;
+            color: white;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        a:hover {
+            background-color: #2980b9;
+        }
+        .success {
+            color: #27ae60;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .error {
+            color: #e74c3c;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>✅ Tablas creadas exitosamente</h1>
-    <p>La base de datos ha sido inicializada con todas las tablas necesarias.</p>
-    <a href="{{ url_for('vista_usuarios.Home') }}">Volver al menú principal</a>
+    <div class="container">
+        {% if mensaje %}
+            {% if 'error' in mensaje|lower %}
+                <h1 class="error">❌ Error al crear tablas</h1>
+                <p>{{ mensaje }}</p>
+            {% else %}
+                <h1 class="success">✅ ¡Tablas creadas exitosamente!</h1>
+                <p>{{ mensaje }}</p>
+            {% endif %}
+        {% else %}
+            <h1>Crear Tablas</h1>
+            <p>Presiona el botón para inicializar las tablas de la base de datos.</p>
+            <form action="{{ url_for('vista_usuarios.crear_tablas') }}" method="get">
+                <button type="submit" style="
+                    background-color: #3498db; color: white; border: none;
+                    padding: 0.6rem 1.4rem; border-radius: 4px; font-weight: 600; cursor: pointer;
+                    ">Crear Tablas</button>
+            </form>
+        {% endif %}
+        <br />
+        <a href="{{ url_for('vista_usuarios.Home') }}">Volver al menú principal</a>
+    </div>
 </body>
 </html>
+
