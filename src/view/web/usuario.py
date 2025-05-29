@@ -1,14 +1,15 @@
 import logging
 import traceback
 from flask import Blueprint, render_template, request, redirect, url_for
+from model import db  
 
 # Configura logging
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
-        logging.FileHandler('debug.log'),  # Logs a archivo
-        logging.StreamHandler()  # Logs a consola
+        logging.FileHandler('debug.log'),
+        logging.StreamHandler()
     ]
 )
 
@@ -95,7 +96,31 @@ def insertar_compra():
                                    purchase_message="Error: El usuario no existe",
                                    purchase_success=False)
 
+        # Calcular impuesto antes de insertar
+        tax_record.tax_value = Taxes.calculate(
+            purchase=tax_record.purchase,
+            porcentage=tax_record.porcentage,
+            discount=tax_record.discount,
+            plastic_bag=tax_record.plastic_bags,
+            currency=tax_record.currency
+        )
+
+        # 1. Guardar en la lógica interna
         CalculatorController.insert_tax(tax_record)
+
+        # 2. Guardar en la base de datos real
+        from model.db_models import TaxRecord as DBTaxRecord
+        new_tax = DBTaxRecord(
+            user_id=tax_record.user_id,
+            purchase=tax_record.purchase,
+            porcentage=tax_record.porcentage,
+            discount=tax_record.discount,
+            plastic_bags=tax_record.plastic_bags,
+            currency=tax_record.currency,
+            tax_value=tax_record.tax_value
+        )
+        db.session.add(new_tax)
+        db.session.commit()
 
         return render_template('insertar.html',
                                purchase_message="Compra insertada correctamente. Impuesto calculado: " + str(tax_record.tax_value),
@@ -127,6 +152,7 @@ def insertar_compra():
                                purchase_success=False)
 
     except Exception as e:
+        db.session.rollback()
         return render_template('insertar.html',
                                purchase_message=f"Error inesperado: {str(e)}",
                                purchase_success=False)
@@ -168,9 +194,6 @@ def actualizar_usuario():
 @plano.route('/actualizar_compra', methods=["POST"])
 def actualizar_compra():
     try:
-        print("\n=== DATOS RECIBIDOS ===")
-        print(dict(request.form))
-
         required_fields = {
             'compra_id': int,
             'user_id': str,
@@ -182,16 +205,13 @@ def actualizar_compra():
         if missing_fields:
             raise ValueError(f"Campos requeridos faltantes: {', '.join(missing_fields)}")
 
-        try:
-            compra_id = int(request.form['compra_id'])
-            user_id = request.form['user_id']
-            purchase = float(request.form['purchase'])
-            porcentage = int(request.form['porcentage'])
-            discount = float(request.form.get('discount', 0))
-            plastic_bags = int(request.form.get('plastic_bags', 0))
-            currency = request.form.get('currency', 'COP')
-        except (ValueError, TypeError) as e:
-            raise ValueError(f"Error en tipos de datos: {str(e)}")
+        compra_id = int(request.form['compra_id'])
+        user_id = request.form['user_id']
+        purchase = float(request.form['purchase'])
+        porcentage = int(request.form['porcentage'])
+        discount = float(request.form.get('discount', 0))
+        plastic_bags = int(request.form.get('plastic_bags', 0))
+        currency = request.form.get('currency', 'COP')
 
         if not user_id.strip():
             raise ValueError("ID de usuario no válido")
@@ -223,10 +243,6 @@ def actualizar_compra():
             )
         }
 
-        print("\n=== DATOS PARA ACTUALIZAR ===")
-        print(f"ID Compra: {compra_id}")
-        print("Nuevos valores:", new_data)
-
         CalculatorController.update_purchase(compra_id, new_data)
 
         return redirect(url_for('vista_usuarios.buscar_modificar',
@@ -234,28 +250,21 @@ def actualizar_compra():
                                 success="¡Compra actualizada correctamente!"))
 
     except ValueError as e:
-        print(f"\n=== ERROR DE VALIDACIÓN ===")
-        print(f"Error: {str(e)}")
         return render_template('modificar.html',
                                error=f"Datos inválidos: {str(e)}",
                                form_data=request.form)
     except Exception as e:
-        print(f"\n=== ERROR INESPERADO ===")
-        print(f"Tipo: {type(e).__name__}")
-        print(f"Mensaje: {str(e)}")
-        print(f"Traceback: {traceback.format_exc()}")
         return render_template('modificar.html',
                                error="Error interno al procesar la solicitud",
                                form_data=request.form)
 
-# --- NUEVA RUTA AGREGADA PARA CREAR LAS TABLAS ---
-@plano.route('/crear_tablas')
 @plano.route('/crear_tablas')
 def crear_tablas():
     try:
         from model import db
+        from src.model.calculator import User, TaxRecord
+
         db.create_all()
-        return render_template('crear_tablas.html', mensaje="✅ Tablas creadas correctamente")
+        return render_template('crear_tablas.html', mensaje="✅ Tablas creadas correctamente en PostgreSQL")
     except Exception as e:
         return render_template('crear_tablas.html', mensaje=f"❌ Error al crear tablas: {str(e)}")
-

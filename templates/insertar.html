@@ -90,8 +90,8 @@
         <h1>Insertar Datos</h1>
         
         <div class="tabs">
-            <div class="tab active" onclick="openTab('user')">Usuario</div>
-            <div class="tab" onclick="openTab('purchase')">Compra</div>
+            <div class="tab active" onclick="openTab('user', this)">Usuario</div>
+            <div class="tab" onclick="openTab('purchase', this)">Compra</div>
         </div>
         
         <!-- Formulario para Usuario -->
@@ -123,31 +123,27 @@
                     <input type="text" id="purchase_user_id" name="user_id" required>
                 </div>
                 
-                <!-- VALIDACIÓN MEJORADA PARA VALOR DE COMPRA -->
                 <div class="form-group">
                     <label for="purchase">Valor de Compra:</label>
                     <input type="number" step="0.01" id="purchase" name="purchase" 
                         required min="0.01" placeholder="Ej: 150.99">
-                        <!-- ^^^^ Nuevos atributos: step, min y placeholder -->
                 </div>
                 
-                <!-- VALIDACIÓN MEJORADA PARA PORCENTAJE -->
                 <div class="form-group">
                     <label for="porcentage">Porcentaje de Impuesto:</label>
-                    <input type="number" step="0.01" id="porcentage" name="porcentage" 
-                        required min="0" max="19" placeholder="Solo 0, 5 o 19">
-                        <!-- ^^^^ Nuevos atributos: max y placeholder -->
+                    <select id="porcentage" name="porcentage" required>
+                        <option value="0">0%</option>
+                        <option value="5">5%</option>
+                        <option value="19">19%</option>
+                    </select>
                 </div>
                 
-                <!-- VALIDACIÓN MEJORADA PARA DESCUENTO -->
                 <div class="form-group">
                     <label for="discount">Descuento:</label>
                     <input type="number" step="0.01" id="discount" name="discount" 
                         value="0" min="0" max="100" placeholder="Máximo 100%">
-                        <!-- ^^^^ Nuevos atributos: max y placeholder -->
                 </div>
                 
-                <!-- (El resto del formulario se mantiene IGUAL) -->
                 <div class="form-group">
                     <label for="plastic_bags">Bolsas Plásticas:</label>
                     <input type="number" id="plastic_bags" name="plastic_bags" value="0" min="0">
@@ -172,20 +168,16 @@
     </div>
 
     <script>
-        function openTab(tabName) {
-            // Oculta todos los contenidos de pestañas
+        function openTab(tabName, element) {
             document.querySelectorAll('.tab-content').forEach(tab => {
                 tab.classList.remove('active');
             });
-            
-            // Muestra el contenido de la pestaña seleccionada
             document.getElementById(tabName).classList.add('active');
-            
-            // Actualiza las pestañas activas
+
             document.querySelectorAll('.tab').forEach(tab => {
                 tab.classList.remove('active');
             });
-            event.currentTarget.classList.add('active');
+            element.classList.add('active');
         }
     </script>
 </body>
