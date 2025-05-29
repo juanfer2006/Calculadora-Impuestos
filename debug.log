@@ -1033,3 +1033,18 @@
 2025-05-29 18:31:54,841 [INFO] 127.0.0.1 - - [29/May/2025 18:31:54] "GET / HTTP/1.1" 200 -
 2025-05-29 18:31:59,012 [INFO] 127.0.0.1 - - [29/May/2025 18:31:59] "GET /buscar HTTP/1.1" 200 -
 2025-05-29 18:32:02,814 [INFO] 127.0.0.1 - - [29/May/2025 18:32:02] "GET /buscar?id=101 HTTP/1.1" 200 -
+2025-05-29 18:49:15,183 [INFO] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-29 18:49:15,186 [INFO] [33mPress CTRL+C to quit[0m
+2025-05-29 18:49:15,188 [INFO]  * Restarting with stat
+2025-05-29 18:49:19,288 [WARNING]  * Debugger is active!
+2025-05-29 18:49:19,296 [INFO]  * Debugger PIN: 214-459-485
+2025-05-29 18:49:32,593 [INFO] 127.0.0.1 - - [29/May/2025 18:49:32] "GET / HTTP/1.1" 200 -
+2025-05-29 18:49:35,473 [INFO] 127.0.0.1 - - [29/May/2025 18:49:35] "GET /crear_tablas HTTP/1.1" 200 -
+2025-05-29 18:49:55,124 [INFO] 127.0.0.1 - - [29/May/2025 18:49:55] "GET / HTTP/1.1" 200 -
+2025-05-29 18:49:59,511 [INFO] 127.0.0.1 - - [29/May/2025 18:49:59] "GET /insertar HTTP/1.1" 200 -
+2025-05-29 18:50:07,421 [INFO] 127.0.0.1 - - [29/May/2025 18:50:07] "POST /insertar_usuario HTTP/1.1" 200 -
+2025-05-29 18:50:48,430 [INFO] 127.0.0.1 - - [29/May/2025 18:50:48] "POST /insertar_compra HTTP/1.1" 200 -
+2025-05-29 18:50:56,457 [INFO] 127.0.0.1 - - [29/May/2025 18:50:56] "GET / HTTP/1.1" 200 -
+2025-05-29 18:51:00,084 [INFO] 127.0.0.1 - - [29/May/2025 18:51:00] "GET /buscar HTTP/1.1" 200 -
+2025-05-29 18:51:03,885 [INFO] 127.0.0.1 - - [29/May/2025 18:51:03] "GET /buscar?id=1011 HTTP/1.1" 200 -
