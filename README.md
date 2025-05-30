@@ -42,17 +42,18 @@ Para ejecutar las pruebas unitarias, desde la carpeta raiz, use el comando "py t
 
 # Instrucciones para crear la base de datos y conexión
 ## Crear la base de datos en Neon
-1. Ve a https://neon.tech y crea una cuenta (o inicia sesión).
-2. Crea un nuevo proyecto: 
+1. Ejecuta esto en la terminal pip install flask_sqlalchemy
+2. Ve a https://neon.tech y crea una cuenta (o inicia sesión).
+3. Crea un nuevo proyecto: 
   - Asigna un nombre al proyecto.
   - Elige una región cercana a ti.
-3. Una vez creado el proyecto, Neon te proporcionará los datos de conexión:
-4. Copia los valores de Connection string y pegalos en el archivo secret_config.py el cual esta en src.
-5. Configurar la conexión
+4. Una vez creado el proyecto, Neon te proporcionará los datos de conexión:
+5. Copia los valores de Connection string y pegalos en el archivo secret_config.py el cual esta en src.
+6. Configurar la conexión
 Crear las tablas ejecutando los test
   
 Crea el archivo src/config/secret_config.py con el siguiente contenido, usando los valores proporcionados por Neon, mira SecretConfig_sample.py como ejemplo
-6. Crear las tablas ejecutando los test
+7. Crear las tablas ejecutando los test
 
 
 
